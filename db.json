@@ -1,0 +1,2336 @@
+{
+  "products": {
+    "products": [
+      {
+        "product_id": "urban-drift-bucket-hat",
+        "name": "Urban Drift Bucket Hat",
+        "description": "Navigate the urban jungle with our Urban Drift Bucket Hat. It's not only trendy but also practical, offering shade from the hustle and bustle.",
+        "category": "unisex",
+        "collection": "urban",
+        "created_at": "2024-04-04"
+      },
+      {
+        "product_id": "tangerine-mini-tote",
+        "name": "Tangerine Mini Tote",
+        "description": "Carry a pop of color with our Tangerine Mini Tote. Compact and vibrant, it's the perfect accessory for the fashion-forward minimalist.",
+        "category": "women",
+        "collection": "fresh",
+        "created_at": "2024-04-03"
+      },
+      {
+        "product_id": "elemental-sneakers",
+        "name": "Elemental Sneakers",
+        "description": "Ground your steps in style with our Elemental Sneakers. Designed with the elements in mind, they bring a natural balance to your stride and your ensemble.",
+        "category": "unisex",
+        "collection": "fresh",
+        "created_at": "2024-03-25"
+      },
+      {
+        "product_id": "metro-hoodie",
+        "name": "Metro Hoodie",
+        "description": "The Metro Hoodie is your ticket to comfortable, laid-back fashion. Whether you're on the move or taking it easy, this hoodie has got you covered.",
+        "category": "unisex",
+        "collection": "urban",
+        "created_at": "2024-03-23"
+      },
+      {
+        "product_id": "sunbeam-mules",
+        "name": "Sunbeam Mules",
+        "description": "Let your feet bask in the glow of our Sunbeam Mules. With their radiant style and effortless slip-on design, they're sunshine for your step.",
+        "category": "women",
+        "collection": "fresh",
+        "created_at": "2024-03-22"
+      },
+      {
+        "product_id": "azure-attitude-shades",
+        "name": "Azure Attitude Shades",
+        "description": "Step out in style with our Azure Attitude Shades, featuring a bold blue tint and modern design. These sunglasses are not just an accessory but a statement of confidence.",
+        "category": "men",
+        "collection": "urban",
+        "created_at": "2024-03-21"
+      },
+      {
+        "product_id": "voyager-hoodie",
+        "name": "Voyager Hoodie",
+        "description": "The Voyager Hoodie is for the explorer at heart. Its durable fabric and roomy pockets are perfect for those who are always searching for the next adventure.",
+        "category": "unisex",
+        "collection": "urban",
+        "created_at": "2024-03-20"
+      },
+      {
+        "product_id": "la-baseball-hat",
+        "name": "LA Baseball Hat",
+        "description": "Shield your eyes and show your style with our LA Baseball Hat. It's not just a nod to the city of angels but a capstone for any casual outfit.",
+        "category": "unisex",
+        "collection": "fresh",
+        "created_at": "2024-02-29"
+      },
+      {
+        "product_id": "classic-canvas-tee",
+        "name": "Classic Canvas Tee",
+        "description": "The Classic Canvas Tee is your go-to wardrobe staple, offering unparalleled comfort and a timeless look that never goes out of style.",
+        "category": "unisex",
+        "collection": "fresh",
+        "created_at": "2024-02-26"
+      },
+      {
+        "product_id": "cool-neo-retro-shoes",
+        "name": "Cool Neo-Retro Shoes",
+        "description": "Merge past and present with our Cool Neo-Retro Shoes. Their classic silhouette with modern twists will have you walking with a foot in each era.",
+        "category": "unisex",
+        "collection": "fresh",
+        "created_at": "2024-02-20"
+      },
+      {
+        "product_id": "city-quilted-jacket",
+        "name": "City Quilted Jacket",
+        "description": "Our City Quilted Jacket is the urban adventurer's essential. With its sleek quilting and durable design, it's ready to take on the city streets while keeping you insulated.",
+        "category": "unisex",
+        "collection": "urban",
+        "created_at": "2024-02-06"
+      },
+      {
+        "product_id": "autumnal-knitwear",
+        "name": "Autumnal Knitwear",
+        "description": "Wrap yourself in the warmth of our Autumnal Knitwear, crafted from premium wool blends to keep you cozy as the leaves change color. Perfect for chilly evenings and crisp mornings.",
+        "category": "women",
+        "collection": "cozy",
+        "created_at": "2024-01-31"
+      },
+      {
+        "product_id": "stepsoft-socks",
+        "name": "StepSoft Socks",
+        "description": "Step into luxury with our StepSoft Socks, designed to pamper your feet with every step. Their cloud-like cushioning is like a spa for your soles.",
+        "category": "unisex",
+        "collection": "cozy",
+        "created_at": "2024-01-31"
+      },
+      {
+        "product_id": "color-ease-tee",
+        "name": "Color Ease Tee",
+        "description": "Experience the ease of color with our soft and simple tees available in a rainbow of hues, designed to brighten your day and your outfit.",
+        "category": "unisex",
+        "collection": "fresh",
+        "created_at": "2024-01-30"
+      },
+      {
+        "product_id": "harvest-cozy-turtleneck",
+        "name": "Harvest Cozy Turtleneck",
+        "description": "Cozy up in our Harvest Turtleneck, a snug embrace on a crisp day. Its rich texture and warm tones embody the essence of autumn comfort.",
+        "category": "women",
+        "collection": "cozy",
+        "created_at": "2024-01-26"
+      },
+      {
+        "product_id": "neutral-charm-blazer",
+        "name": "Neutral Charm Blazer",
+        "description": "Our Neutral Charm Blazer adds a touch of sophistication to any outfit. Its subtle hues and tailored fit make it a versatile choice for any occasion.",
+        "category": "women",
+        "collection": "urban",
+        "created_at": "2024-01-25"
+      },
+      {
+        "product_id": "cute-banana-socks",
+        "name": "Cute Banana Socks",
+        "description": "Add a bunch of fun to your feet with our Cute Banana Socks. They're as comfy as they are playful, perfect for lounging or peeling around town.",
+        "category": "unisex",
+        "collection": "cozy",
+        "created_at": "2024-01-14"
+      },
+      {
+        "product_id": "canis-philosophus-linen-tee",
+        "name": "Canis Philosophus Linen Tee",
+        "description": "Embrace the wisdom of comfort with our Canis Philosophus Linen Tee. Made from breathable linen, this T-shirt combines classic style with a relaxed fit for the thinker on the move.",
+        "category": "men",
+        "collection": "fresh",
+        "created_at": "2024-01-08"
+      },
+      {
+        "product_id": "urban-bomber-jacket",
+        "name": "Urban Bomber Jacket",
+        "description": "The Urban Bomber Jacket is your armor against the elements. Its edgy style and robust construction make it a city dweller's essential.",
+        "category": "men",
+        "collection": "urban",
+        "created_at": "2024-01-03"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "category_id": "men",
+      "name": "Men",
+      "created_at": "2024-01-01"
+    },
+    {
+      "category_id": "women",
+      "name": "Women",
+      "created_at": "2024-01-01"
+    },
+    {
+      "category_id": "unisex",
+      "name": "Unisex",
+      "created_at": "2024-01-01"
+    }
+  ],
+  "inventory": [
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-blue-xs",
+      "color": "blue",
+      "size": "xs",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 35,
+      "stock": 15
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-blue-sm",
+      "color": "blue",
+      "size": "sm",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 30,
+      "stock": 20
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-blue-md",
+      "color": "blue",
+      "size": "md",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 25,
+      "stock": 25
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-blue-lg",
+      "color": "blue",
+      "size": "lg",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 20,
+      "stock": 30
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-blue-xl",
+      "color": "blue",
+      "size": "xl",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 15,
+      "stock": 35
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-brown-xs",
+      "color": "brown",
+      "size": "xs",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 40,
+      "stock": 10
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-brown-sm",
+      "color": "brown",
+      "size": "sm",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 35,
+      "stock": 15
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-brown-md",
+      "color": "brown",
+      "size": "md",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 30,
+      "stock": 20
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-brown-lg",
+      "color": "brown",
+      "size": "lg",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 25,
+      "stock": 25
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-brown-xl",
+      "color": "brown",
+      "size": "xl",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 20,
+      "stock": 30
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-yellow-xs",
+      "color": "yellow",
+      "size": "xs",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 35,
+      "stock": 15
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-yellow-sm",
+      "color": "yellow",
+      "size": "sm",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 30,
+      "stock": 20
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-yellow-md",
+      "color": "yellow",
+      "size": "md",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 25,
+      "stock": 25
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-yellow-lg",
+      "color": "yellow",
+      "size": "lg",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 20,
+      "stock": 30
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "sku": "ak-yellow-xl",
+      "color": "yellow",
+      "size": "xl",
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 90,
+      "sold": 15,
+      "stock": 35
+    },
+    {
+      "product_id": "azure-attitude-shades",
+      "sku": "aas-blue",
+      "color": "blue",
+      "size": null,
+      "list_price": 45,
+      "discount": null,
+      "discount_percentage": null,
+      "sale_price": 45,
+      "sold": 65,
+      "stock": 435
+    },
+    {
+      "product_id": "canis-philosophus-linen-tee",
+      "sku": "cplt-white-xs",
+      "color": "white",
+      "size": "xs",
+      "list_price": 50,
+      "discount": 5,
+      "discount_percentage": null,
+      "sale_price": 45,
+      "sold": 50,
+      "stock": 50
+    },
+    {
+      "product_id": "canis-philosophus-linen-tee",
+      "sku": "cplt-white-sm",
+      "color": "white",
+      "size": "sm",
+      "list_price": 50,
+      "discount": 5,
+      "discount_percentage": null,
+      "sale_price": 45,
+      "sold": 45,
+      "stock": 55
+    },
+    {
+      "product_id": "canis-philosophus-linen-tee",
+      "sku": "cplt-white-md",
+      "color": "white",
+      "size": "md",
+      "list_price": 50,
+      "discount": 5,
+      "discount_percentage": null,
+      "sale_price": 45,
+      "sold": 40,
+      "stock": 60
+    },
+    {
+      "product_id": "canis-philosophus-linen-tee",
+      "sku": "cplt-white-lg",
+      "color": "white",
+      "size": "lg",
+      "list_price": 50,
+      "discount": 5,
+      "discount_percentage": null,
+      "sale_price": 45,
+      "sold": 35,
+      "stock": 65
+    },
+    {
+      "product_id": "canis-philosophus-linen-tee",
+      "sku": "cplt-white-xl",
+      "color": "white",
+      "size": "xl",
+      "list_price": 50,
+      "discount": 5,
+      "discount_percentage": null,
+      "sale_price": 45,
+      "sold": 30,
+      "stock": 70
+    },
+    {
+      "product_id": "city-quilted-jacket",
+      "sku": "cqj-white-xs",
+      "color": "white",
+      "size": "xs",
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 108,
+      "sold": 25,
+      "stock": 75
+    },
+    {
+      "product_id": "city-quilted-jacket",
+      "sku": "cqj-white-sm",
+      "color": "white",
+      "size": "sm",
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 108,
+      "sold": 20,
+      "stock": 80
+    },
+    {
+      "product_id": "city-quilted-jacket",
+      "sku": "cqj-white-md",
+      "color": "white",
+      "size": "md",
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 108,
+      "sold": 15,
+      "stock": 85
+    },
+    {
+      "product_id": "city-quilted-jacket",
+      "sku": "cqj-white-lg",
+      "color": "white",
+      "size": "lg",
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 108,
+      "sold": 10,
+      "stock": 90
+    },
+    {
+      "product_id": "city-quilted-jacket",
+      "sku": "cqj-white-xl",
+      "color": "white",
+      "size": "xl",
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 108,
+      "sold": 5,
+      "stock": 95
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-white-xs",
+      "color": "white",
+      "size": "xs",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 100,
+      "stock": 900
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-white-sm",
+      "color": "white",
+      "size": "sm",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 90,
+      "stock": 910
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-white-md",
+      "color": "white",
+      "size": "md",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 80,
+      "stock": 920
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-white-lg",
+      "color": "white",
+      "size": "lg",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 70,
+      "stock": 930
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-white-xl",
+      "color": "white",
+      "size": "xl",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 60,
+      "stock": 940
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-red-xs",
+      "color": "red",
+      "size": "xs",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 100,
+      "stock": 900
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-red-sm",
+      "color": "red",
+      "size": "sm",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 90,
+      "stock": 910
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-red-md",
+      "color": "red",
+      "size": "md",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 80,
+      "stock": 920
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-red-lg",
+      "color": "red",
+      "size": "lg",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 70,
+      "stock": 930
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-red-xl",
+      "color": "red",
+      "size": "xl",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 60,
+      "stock": 940
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-orange-xs",
+      "color": "orange",
+      "size": "xs",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 100,
+      "stock": 900
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-orange-sm",
+      "color": "orange",
+      "size": "sm",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 90,
+      "stock": 910
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-orange-md",
+      "color": "orange",
+      "size": "md",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 80,
+      "stock": 920
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-orange-lg",
+      "color": "orange",
+      "size": "lg",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 70,
+      "stock": 930
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-orange-xl",
+      "color": "orange",
+      "size": "xl",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 60,
+      "stock": 940
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-brown-xs",
+      "color": "brown",
+      "size": "xs",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 100,
+      "stock": 900
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-brown-sm",
+      "color": "brown",
+      "size": "sm",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 90,
+      "stock": 910
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-brown-md",
+      "color": "brown",
+      "size": "md",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 80,
+      "stock": 920
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-brown-lg",
+      "color": "brown",
+      "size": "lg",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 70,
+      "stock": 930
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-brown-xl",
+      "color": "brown",
+      "size": "xl",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 60,
+      "stock": 940
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-beige-xs",
+      "color": "beige",
+      "size": "xs",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 100,
+      "stock": 0
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-beige-sm",
+      "color": "beige",
+      "size": "sm",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 90,
+      "stock": 0
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-beige-md",
+      "color": "beige",
+      "size": "md",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 80,
+      "stock": 0
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-beige-lg",
+      "color": "beige",
+      "size": "lg",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 70,
+      "stock": 0
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "sku": "cct-beige-xl",
+      "color": "beige",
+      "size": "xl",
+      "list_price": 25,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 22.5,
+      "sold": 60,
+      "stock": 0
+    },
+    {
+      "product_id": "color-ease-tee",
+      "sku": "cet-pink-xs",
+      "color": "pink",
+      "size": "xs",
+      "list_price": 30,
+      "discount": null,
+      "discount_percentage": 5,
+      "sale_price": 28.5,
+      "sold": 50,
+      "stock": 250
+    },
+    {
+      "product_id": "color-ease-tee",
+      "sku": "cet-pink-sm",
+      "color": "pink",
+      "size": "sm",
+      "list_price": 30,
+      "discount": null,
+      "discount_percentage": 5,
+      "sale_price": 28.5,
+      "sold": 45,
+      "stock": 255
+    },
+    {
+      "product_id": "color-ease-tee",
+      "sku": "cet-pink-md",
+      "color": "pink",
+      "size": "md",
+      "list_price": 30,
+      "discount": null,
+      "discount_percentage": 5,
+      "sale_price": 28.5,
+      "sold": 40,
+      "stock": 260
+    },
+    {
+      "product_id": "color-ease-tee",
+      "sku": "cet-pink-lg",
+      "color": "pink",
+      "size": "lg",
+      "list_price": 30,
+      "discount": null,
+      "discount_percentage": 5,
+      "sale_price": 28.5,
+      "sold": 35,
+      "stock": 265
+    },
+    {
+      "product_id": "color-ease-tee",
+      "sku": "cet-pink-xl",
+      "color": "pink",
+      "size": "xl",
+      "list_price": 30,
+      "discount": null,
+      "discount_percentage": 5,
+      "sale_price": 28.5,
+      "sold": 30,
+      "stock": 270
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-4",
+      "color": "white",
+      "size": 4,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 50,
+      "stock": 150
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-4.5",
+      "color": "white",
+      "size": 4.5,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 45,
+      "stock": 155
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-5",
+      "color": "white",
+      "size": 5,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 40,
+      "stock": 160
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-5.5",
+      "color": "white",
+      "size": 5.5,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 35,
+      "stock": 165
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-6",
+      "color": "white",
+      "size": 6,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 30,
+      "stock": 170
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-6.5",
+      "color": "white",
+      "size": 6.5,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 25,
+      "stock": 175
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-7",
+      "color": "white",
+      "size": 7,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 20,
+      "stock": 180
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-7.5",
+      "color": "white",
+      "size": 7.5,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 15,
+      "stock": 185
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-8",
+      "color": "white",
+      "size": 8,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 10,
+      "stock": 190
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-8.5",
+      "color": "white",
+      "size": 8.5,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 5,
+      "stock": 195
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-9",
+      "color": "white",
+      "size": 9,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 2,
+      "stock": 198
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-9.5",
+      "color": "white",
+      "size": 9.5,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 1,
+      "stock": 199
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-10",
+      "color": "white",
+      "size": 10,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 0,
+      "stock": 200
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-10.5",
+      "color": "white",
+      "size": 10.5,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 0,
+      "stock": 200
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-11",
+      "color": "white",
+      "size": 11,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 0,
+      "stock": 200
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-11.5",
+      "color": "white",
+      "size": 11.5,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 0,
+      "stock": 200
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "sku": "cnrs-white-12",
+      "color": "white",
+      "size": 12,
+      "list_price": 120,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 96,
+      "sold": 0,
+      "stock": 200
+    },
+    {
+      "product_id": "cute-banana-socks",
+      "sku": "cbs-pink",
+      "color": "pink",
+      "size": null,
+      "list_price": 20,
+      "discount": null,
+      "discount_percentage": null,
+      "sale_price": 20,
+      "sold": 65,
+      "stock": 435
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-4",
+      "color": "beige",
+      "size": 4,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 100,
+      "stock": 400
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-4.5",
+      "color": "beige",
+      "size": 4.5,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 90,
+      "stock": 410
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-5",
+      "color": "beige",
+      "size": 5,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 80,
+      "stock": 420
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-5.5",
+      "color": "beige",
+      "size": 5.5,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 70,
+      "stock": 430
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-6",
+      "color": "beige",
+      "size": 6,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 60,
+      "stock": 440
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-6.5",
+      "color": "beige",
+      "size": 6.5,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 50,
+      "stock": 450
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-7",
+      "color": "beige",
+      "size": 7,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 40,
+      "stock": 460
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-7.5",
+      "color": "beige",
+      "size": 7.5,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 30,
+      "stock": 470
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-8",
+      "color": "beige",
+      "size": 8,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 20,
+      "stock": 480
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-8.5",
+      "color": "beige",
+      "size": 8.5,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 10,
+      "stock": 490
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-9",
+      "color": "beige",
+      "size": 9,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 5,
+      "stock": 495
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-9.5",
+      "color": "beige",
+      "size": 9.5,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 2,
+      "stock": 498
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-10",
+      "color": "beige",
+      "size": 10,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 1,
+      "stock": 499
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-10.5",
+      "color": "beige",
+      "size": 10.5,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 0,
+      "stock": 500
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-11",
+      "color": "beige",
+      "size": 11,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 0,
+      "stock": 500
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-11.5",
+      "color": "beige",
+      "size": 11.5,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 0,
+      "stock": 500
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "sku": "es-beige-12",
+      "color": "beige",
+      "size": 12,
+      "list_price": 100,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 80,
+      "sold": 0,
+      "stock": 500
+    },
+    {
+      "product_id": "harvest-cozy-turtleneck",
+      "sku": "hct-beige-xs",
+      "color": "beige",
+      "size": "xs",
+      "list_price": 110,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 99,
+      "sold": 75,
+      "stock": 225
+    },
+    {
+      "product_id": "harvest-cozy-turtleneck",
+      "sku": "hct-beige-sm",
+      "color": "beige",
+      "size": "sm",
+      "list_price": 110,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 99,
+      "sold": 70,
+      "stock": 230
+    },
+    {
+      "product_id": "harvest-cozy-turtleneck",
+      "sku": "hct-beige-md",
+      "color": "beige",
+      "size": "md",
+      "list_price": 110,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 99,
+      "sold": 65,
+      "stock": 235
+    },
+    {
+      "product_id": "harvest-cozy-turtleneck",
+      "sku": "hct-beige-lg",
+      "color": "beige",
+      "size": "lg",
+      "list_price": 110,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 99,
+      "sold": 60,
+      "stock": 240
+    },
+    {
+      "product_id": "harvest-cozy-turtleneck",
+      "sku": "hct-beige-xl",
+      "color": "beige",
+      "size": "xl",
+      "list_price": 110,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 99,
+      "sold": 55,
+      "stock": 245
+    },
+    {
+      "product_id": "la-baseball-hat",
+      "sku": "lbh-black",
+      "color": "black",
+      "size": null,
+      "list_price": 20,
+      "discount": null,
+      "discount_percentage": null,
+      "sale_price": 20,
+      "sold": 65,
+      "stock": 435
+    },
+    {
+      "product_id": "metro-hoodie",
+      "sku": "mh-black-xs",
+      "color": "black",
+      "size": "xs",
+      "list_price": 90,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 81,
+      "sold": 100,
+      "stock": 300
+    },
+    {
+      "product_id": "metro-hoodie",
+      "sku": "mh-black-sm",
+      "color": "black",
+      "size": "sm",
+      "list_price": 90,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 81,
+      "sold": 95,
+      "stock": 305
+    },
+    {
+      "product_id": "metro-hoodie",
+      "sku": "mh-black-md",
+      "color": "black",
+      "size": "md",
+      "list_price": 90,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 81,
+      "sold": 90,
+      "stock": 310
+    },
+    {
+      "product_id": "metro-hoodie",
+      "sku": "mh-black-lg",
+      "color": "black",
+      "size": "lg",
+      "list_price": 90,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 81,
+      "sold": 85,
+      "stock": 315
+    },
+    {
+      "product_id": "metro-hoodie",
+      "sku": "mh-black-xl",
+      "color": "black",
+      "size": "xl",
+      "list_price": 90,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 81,
+      "sold": 80,
+      "stock": 320
+    },
+    {
+      "product_id": "neutral-charm-blazer",
+      "sku": "ncb-beige-xs",
+      "color": "beige",
+      "size": "xs",
+      "list_price": 130,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 117,
+      "sold": 50,
+      "stock": 150
+    },
+    {
+      "product_id": "neutral-charm-blazer",
+      "sku": "ncb-beige-sm",
+      "color": "beige",
+      "size": "sm",
+      "list_price": 130,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 117,
+      "sold": 45,
+      "stock": 155
+    },
+    {
+      "product_id": "neutral-charm-blazer",
+      "sku": "ncb-beige-md",
+      "color": "beige",
+      "size": "md",
+      "list_price": 130,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 117,
+      "sold": 40,
+      "stock": 160
+    },
+    {
+      "product_id": "neutral-charm-blazer",
+      "sku": "ncb-beige-lg",
+      "color": "beige",
+      "size": "lg",
+      "list_price": 130,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 117,
+      "sold": 35,
+      "stock": 165
+    },
+    {
+      "product_id": "neutral-charm-blazer",
+      "sku": "ncb-beige-xl",
+      "color": "beige",
+      "size": "xl",
+      "list_price": 130,
+      "discount": null,
+      "discount_percentage": 10,
+      "sale_price": 117,
+      "sold": 30,
+      "stock": 170
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "sku": "ss-orange-xs",
+      "color": "orange",
+      "size": "xs",
+      "list_price": 25,
+      "discount": 2.5,
+      "discount_percentage": null,
+      "sale_price": 22.5,
+      "sold": 200,
+      "stock": 10
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "sku": "ss-orange-sm",
+      "color": "orange",
+      "size": "sm",
+      "list_price": 25,
+      "discount": 2.5,
+      "discount_percentage": null,
+      "sale_price": 22.5,
+      "sold": 190,
+      "stock": 10
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "sku": "ss-orange-md",
+      "color": "orange",
+      "size": "md",
+      "list_price": 25,
+      "discount": 2.5,
+      "discount_percentage": null,
+      "sale_price": 22.5,
+      "sold": 180,
+      "stock": 10
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "sku": "ss-orange-lg",
+      "color": "orange",
+      "size": "lg",
+      "list_price": 25,
+      "discount": 2.5,
+      "discount_percentage": null,
+      "sale_price": 22.5,
+      "sold": 170,
+      "stock": 10
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "sku": "ss-orange-xl",
+      "color": "orange",
+      "size": "xl",
+      "list_price": 25,
+      "discount": 2.5,
+      "discount_percentage": null,
+      "sale_price": 22.5,
+      "sold": 160,
+      "stock": 10
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "sku": "ss-pink-xs",
+      "color": "pink",
+      "size": "xs",
+      "list_price": 25,
+      "discount": 2.5,
+      "discount_percentage": null,
+      "sale_price": 22.5,
+      "sold": 200,
+      "stock": 10
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "sku": "ss-pink-sm",
+      "color": "pink",
+      "size": "sm",
+      "list_price": 25,
+      "discount": 2.5,
+      "discount_percentage": null,
+      "sale_price": 22.5,
+      "sold": 190,
+      "stock": 10
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "sku": "ss-pink-md",
+      "color": "pink",
+      "size": "md",
+      "list_price": 25,
+      "discount": 2.5,
+      "discount_percentage": null,
+      "sale_price": 22.5,
+      "sold": 180,
+      "stock": 10
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "sku": "ss-pink-lg",
+      "color": "pink",
+      "size": "lg",
+      "list_price": 25,
+      "discount": 2.5,
+      "discount_percentage": null,
+      "sale_price": 22.5,
+      "sold": 170,
+      "stock": 10
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "sku": "ss-pink-xl",
+      "color": "pink",
+      "size": "xl",
+      "list_price": 25,
+      "discount": 2.5,
+      "discount_percentage": null,
+      "sale_price": 22.5,
+      "sold": 160,
+      "stock": 10
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-4",
+      "color": "yellow",
+      "size": 4,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 120,
+      "stock": 380
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-4.5",
+      "color": "yellow",
+      "size": 4.5,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 115,
+      "stock": 385
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-5",
+      "color": "yellow",
+      "size": 5,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 110,
+      "stock": 390
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-5.5",
+      "color": "yellow",
+      "size": 5.5,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 105,
+      "stock": 395
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-6",
+      "color": "yellow",
+      "size": 6,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 100,
+      "stock": 400
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-6.5",
+      "color": "yellow",
+      "size": 6.5,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 95,
+      "stock": 405
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-7",
+      "color": "yellow",
+      "size": 7,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 90,
+      "stock": 410
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-7.5",
+      "color": "yellow",
+      "size": 7.5,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 85,
+      "stock": 415
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-8",
+      "color": "yellow",
+      "size": 8,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 80,
+      "stock": 420
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-8.5",
+      "color": "yellow",
+      "size": 8.5,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 75,
+      "stock": 425
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-9",
+      "color": "yellow",
+      "size": 9,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 70,
+      "stock": 430
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-9.5",
+      "color": "yellow",
+      "size": 9.5,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 65,
+      "stock": 435
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-10",
+      "color": "yellow",
+      "size": 10,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 60,
+      "stock": 440
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-10.5",
+      "color": "yellow",
+      "size": 10.5,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 55,
+      "stock": 445
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-11",
+      "color": "yellow",
+      "size": 11,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 50,
+      "stock": 450
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-11.5",
+      "color": "yellow",
+      "size": 11.5,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 45,
+      "stock": 455
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "sku": "sm-yellow-12",
+      "color": "yellow",
+      "size": 12,
+      "list_price": 85,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 68,
+      "sold": 40,
+      "stock": 460
+    },
+    {
+      "product_id": "tangerine-mini-tote",
+      "sku": "tmt-orange",
+      "color": "orange",
+      "size": null,
+      "list_price": 150,
+      "discount": null,
+      "discount_percentage": null,
+      "sale_price": 150,
+      "sold": 65,
+      "stock": 435
+    },
+    {
+      "product_id": "urban-bomber-jacket",
+      "sku": "ubj-green-xs",
+      "color": "green",
+      "size": "xs",
+      "list_price": 150,
+      "discount": 15,
+      "discount_percentage": null,
+      "sale_price": 135,
+      "sold": 60,
+      "stock": 240
+    },
+    {
+      "product_id": "urban-bomber-jacket",
+      "sku": "ubj-green-sm",
+      "color": "green",
+      "size": "sm",
+      "list_price": 150,
+      "discount": 15,
+      "discount_percentage": null,
+      "sale_price": 135,
+      "sold": 55,
+      "stock": 245
+    },
+    {
+      "product_id": "urban-bomber-jacket",
+      "sku": "ubj-green-md",
+      "color": "green",
+      "size": "md",
+      "list_price": 150,
+      "discount": 15,
+      "discount_percentage": null,
+      "sale_price": 135,
+      "sold": 50,
+      "stock": 250
+    },
+    {
+      "product_id": "urban-bomber-jacket",
+      "sku": "ubj-green-lg",
+      "color": "green",
+      "size": "lg",
+      "list_price": 150,
+      "discount": 15,
+      "discount_percentage": null,
+      "sale_price": 135,
+      "sold": 45,
+      "stock": 255
+    },
+    {
+      "product_id": "urban-bomber-jacket",
+      "sku": "ubj-green-xl",
+      "color": "green",
+      "size": "xl",
+      "list_price": 150,
+      "discount": 15,
+      "discount_percentage": null,
+      "sale_price": 135,
+      "sold": 40,
+      "stock": 260
+    },
+    {
+      "product_id": "urban-drift-bucket-hat",
+      "sku": "udbh-black",
+      "color": "black",
+      "size": null,
+      "list_price": 15,
+      "discount": null,
+      "discount_percentage": null,
+      "sale_price": 15,
+      "sold": 65,
+      "stock": 435
+    },
+    {
+      "product_id": "urban-drift-bucket-hat",
+      "sku": "udbh-white",
+      "color": "white",
+      "size": null,
+      "list_price": 15,
+      "discount": null,
+      "discount_percentage": null,
+      "sale_price": 15,
+      "sold": 65,
+      "stock": 435
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "sku": "vh-green-xs",
+      "color": "green",
+      "size": "xs",
+      "list_price": 95,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 76,
+      "sold": 85,
+      "stock": 415
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "sku": "vh-green-sm",
+      "color": "green",
+      "size": "sm",
+      "list_price": 95,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 76,
+      "sold": 80,
+      "stock": 420
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "sku": "vh-green-md",
+      "color": "green",
+      "size": "md",
+      "list_price": 95,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 76,
+      "sold": 75,
+      "stock": 425
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "sku": "vh-green-lg",
+      "color": "green",
+      "size": "lg",
+      "list_price": 95,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 76,
+      "sold": 70,
+      "stock": 430
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "sku": "vh-green-xl",
+      "color": "green",
+      "size": "xl",
+      "list_price": 95,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 76,
+      "sold": 65,
+      "stock": 435
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "sku": "vh-brown-xs",
+      "color": "brown",
+      "size": "xs",
+      "list_price": 95,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 76,
+      "sold": 85,
+      "stock": 415
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "sku": "vh-brown-sm",
+      "color": "brown",
+      "size": "sm",
+      "list_price": 95,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 76,
+      "sold": 80,
+      "stock": 420
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "sku": "vh-brown-md",
+      "color": "brown",
+      "size": "md",
+      "list_price": 95,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 76,
+      "sold": 75,
+      "stock": 425
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "sku": "vh-brown-lg",
+      "color": "brown",
+      "size": "lg",
+      "list_price": 95,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 76,
+      "sold": 70,
+      "stock": 430
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "sku": "vh-brown-xl",
+      "color": "brown",
+      "size": "xl",
+      "list_price": 95,
+      "discount": null,
+      "discount_percentage": 20,
+      "sale_price": 76,
+      "sold": 65,
+      "stock": 435
+    }
+  ],
+  "collections": [
+    {
+      "collection_id": "cozy",
+      "name": "Cozy Comfort",
+      "description": "Plush fabrics and soothing designs",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/collections/cozy-comfort.jpg",
+      "created_at": "2024-01-01"
+    },
+    {
+      "collection_id": "urban",
+      "name": "Urban Oasis",
+      "description": "For the city dwellers",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/collections/urban-oasis.jpg",
+      "created_at": "2024-01-01"
+    },
+    {
+      "collection_id": "fresh",
+      "name": "Fresh Fusion",
+      "description": "Contemporary styles and patterns",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/collections/fresh-fusion.jpg",
+      "created_at": "2024-01-01"
+    }
+  ],
+  "product-images": [
+    {
+      "product_id": "autumnal-knitwear",
+      "color": "blue",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/autumnal-knitwear/autumnal-knitwear-1.jpg"
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "color": "blue",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/autumnal-knitwear/autumnal-knitwear-2.jpg"
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "color": "blue",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/autumnal-knitwear/autumnal-knitwear-3.jpg"
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "color": "brown",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/autumnal-knitwear/autumnal-knitwear-1.jpg"
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "color": "brown",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/autumnal-knitwear/autumnal-knitwear-2.jpg"
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "color": "brown",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/autumnal-knitwear/autumnal-knitwear-3.jpg"
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/autumnal-knitwear/autumnal-knitwear-1.jpg"
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/autumnal-knitwear/autumnal-knitwear-2.jpg"
+    },
+    {
+      "product_id": "autumnal-knitwear",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/autumnal-knitwear/autumnal-knitwear-3.jpg"
+    },
+    {
+      "product_id": "azure-attitude-shades",
+      "color": "blue",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/azure-attitude-shades/azure-attitude-shades-1.jpg"
+    },
+    {
+      "product_id": "azure-attitude-shades",
+      "color": "blue",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/azure-attitude-shades/azure-attitude-shades-2.jpg"
+    },
+    {
+      "product_id": "canis-philosophus-linen-tee",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/canis-philosophus-linen-tee/canis-philosophus-linen-tee-1.jpg"
+    },
+    {
+      "product_id": "city-quilted-jacket",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/city-quilted-jacket/city-quilted-jacket-1.jpg"
+    },
+    {
+      "product_id": "city-quilted-jacket",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/city-quilted-jacket/city-quilted-jacket-2.jpg"
+    },
+    {
+      "product_id": "city-quilted-jacket",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/city-quilted-jacket/city-quilted-jacket-3.jpg"
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/classic-canvas-tee/classic-canvas-tee-1.jpg"
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/classic-canvas-tee/classic-canvas-tee-2.jpg"
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "color": "red",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/classic-canvas-tee/classic-canvas-tee-1.jpg"
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "color": "red",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/classic-canvas-tee/classic-canvas-tee-2.jpg"
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "color": "orange",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/classic-canvas-tee/classic-canvas-tee-1.jpg"
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "color": "orange",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/classic-canvas-tee/classic-canvas-tee-2.jpg"
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "color": "brown",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/classic-canvas-tee/classic-canvas-tee-1.jpg"
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "color": "brown",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/classic-canvas-tee/classic-canvas-tee-2.jpg"
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/classic-canvas-tee/classic-canvas-tee-1.jpg"
+    },
+    {
+      "product_id": "classic-canvas-tee",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/classic-canvas-tee/classic-canvas-tee-2.jpg"
+    },
+    {
+      "product_id": "color-ease-tee",
+      "color": "pink",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/color-ease-tee/color-ease-tee.jpg"
+    },
+    {
+      "product_id": "cool-neo-retro-shoes",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/cool-neo-retro-shoes/cool-netro-retro-shoes-1.jpg"
+    },
+    {
+      "product_id": "cute-banana-socks",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/cute-banana-socks/cute-banana-socks-1.jpg"
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/elemental-sneakers/elemental-sneakers-1.jpg"
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/elemental-sneakers/elemental-sneakers-2.jpg"
+    },
+    {
+      "product_id": "elemental-sneakers",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/elemental-sneakers/elemental-sneakers-3.jpg"
+    },
+    {
+      "product_id": "harvest-cozy-turtleneck",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/harvest-cozy-turtleneck/harvest-cozy-turtleneck-1.jpg"
+    },
+    {
+      "product_id": "harvest-cozy-turtleneck",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/harvest-cozy-turtleneck/harvest-cozy-turtleneck-2.jpg"
+    },
+    {
+      "product_id": "harvest-cozy-turtleneck",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/harvest-cozy-turtleneck/harvest-cozy-turtleneck-3.jpg"
+    },
+    {
+      "product_id": "la-baseball-hat",
+      "color": "black",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/la-baseball-hat/la-baseball-hat-1.jpg"
+    },
+    {
+      "product_id": "metro-hoodie",
+      "color": "black",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/metro-hoodie/metro-hoodie-1.jpg"
+    },
+    {
+      "product_id": "metro-hoodie",
+      "color": "black",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/metro-hoodie/metro-hoodie-2.jpg"
+    },
+    {
+      "product_id": "neutral-charm-blazer",
+      "color": "beige",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/neutral-charm-blazer/neutral-charm-blazer-1.jpg"
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "color": "orange",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/stepsoft-socks/stepsoft-socks-1.jpg"
+    },
+    {
+      "product_id": "stepsoft-socks",
+      "color": "pink",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/stepsoft-socks/stepsoft-socks-2.webp"
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "color": "yellow",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/sunbeam-mules/sunbeam-mules-1.jpg"
+    },
+    {
+      "product_id": "sunbeam-mules",
+      "color": "yellow",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/sunbeam-mules/sunbeam-mules-2.jpg"
+    },
+    {
+      "product_id": "tangerine-mini-tote",
+      "color": "orange",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/tangerine-mini-tote/tangerine-mini-tote-1.jpg"
+    },
+    {
+      "product_id": "tangerine-mini-tote",
+      "color": "orange",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/tangerine-mini-tote/tangerine-mini-tote-2.jpg"
+    },
+    {
+      "product_id": "tangerine-mini-tote",
+      "color": "orange",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/tangerine-mini-tote/tangerine-mini-tote-3.jpg"
+    },
+    {
+      "product_id": "tangerine-mini-tote",
+      "color": "orange",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/tangerine-mini-tote/tangerine-mini-tote-4.jpg"
+    },
+    {
+      "product_id": "tangerine-mini-tote",
+      "color": "orange",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/tangerine-mini-tote/tangerine-mini-tote-5.jpg"
+    },
+    {
+      "product_id": "urban-bomber-jacket",
+      "color": "green",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/urban-bomber-jacket/urban-bomber-jacket-1.jpg"
+    },
+    {
+      "product_id": "urban-bomber-jacket",
+      "color": "green",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/urban-bomber-jacket/urban-bomber-jacket-2.jpg"
+    },
+    {
+      "product_id": "urban-bomber-jacket",
+      "color": "green",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/urban-bomber-jacket/urban-bomber-jacket-3.jpg"
+    },
+    {
+      "product_id": "urban-drift-bucket-hat",
+      "color": "black",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/urban-drift-bucket-hat/urban-drift-bucket-hat-1.jpg"
+    },
+    {
+      "product_id": "urban-drift-bucket-hat",
+      "color": "black",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/urban-drift-bucket-hat/urban-drift-bucket-hat-2.jpg"
+    },
+    {
+      "product_id": "urban-drift-bucket-hat",
+      "color": "black",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/urban-drift-bucket-hat/urban-drift-bucket-hat-3.jpg"
+    },
+    {
+      "product_id": "urban-drift-bucket-hat",
+      "color": "black",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/urban-drift-bucket-hat/urban-drift-bucket-hat-4.jpg"
+    },
+    {
+      "product_id": "urban-drift-bucket-hat",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/urban-drift-bucket-hat/urban-drift-bucket-hat-5.jpg"
+    },
+    {
+      "product_id": "urban-drift-bucket-hat",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/urban-drift-bucket-hat/urban-drift-bucket-hat-6.jpg"
+    },
+    {
+      "product_id": "urban-drift-bucket-hat",
+      "color": "white",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/urban-drift-bucket-hat/urban-drift-bucket-hat-7.jpg"
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "color": "green",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/voyager-hoodie/voyager-hoodie-1.jpg"
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "color": "brown",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/voyager-hoodie/voyager-hoodie-1.jpg"
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "color": "green",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/voyager-hoodie/voyager-hoodie-2.jpg"
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "color": "green",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/voyager-hoodie/voyager-hoodie-3.jpg"
+    },
+    {
+      "product_id": "voyager-hoodie",
+      "color": "green",
+      "image_url": "https://vaqybtnqyonvlwtskzmv.supabase.co/storage/v1/object/public/e-commerce-track-images/voyager-hoodie/voyager-hoodie-4.jpg"
+    }
+  ]
+}
