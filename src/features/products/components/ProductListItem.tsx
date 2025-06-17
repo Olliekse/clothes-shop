@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { capitalizeFirstLetter } from "../../utils/utils";
+import { capitalizeFirstLetter } from "../utils/productHelpers";
+import { Link } from "react-router";
 
 interface Product {
   product_id: string;
@@ -100,17 +101,23 @@ function ProductListItem({
 
   return (
     <div className="mb-[32px]" key={product.product_id}>
-      <img
-        className=" rounded-lg w-[319px] object-cover h-[300px] md:w-[336px] lg:w-[280px]"
-        src={productImage.image_url}
-        alt={product.name}
-      />
+      <Link to={`/product/${product.product_id}`}>
+        <img
+          className="cursor-pointer rounded-lg w-[319px] object-cover h-[300px] md:w-[336px] lg:w-[280px]"
+          src={productImage.image_url}
+          alt={product.name}
+        />
+      </Link>
 
       <div className="mt-[16px] mx-0">
         <p className="text-sm text-neutral-600">
           {capitalizeFirstLetter(defaultInventoryItem.color)}
         </p>
-        <span className="text-3xl">{product.name}</span>
+        <Link to={`/product/${product.product_id}`}>
+          <span className="cursor-pointer text-3xl min-[1440px]:font-medium min-[1440px]:text-lg">
+            {product.name}
+          </span>
+        </Link>
         <div
           className="flex items-center gap-[8px] mt-[12px]"
           aria-label="Price information"
@@ -176,5 +183,3 @@ function ProductListItem({
 }
 
 export default ProductListItem;
-
-// ${selectedColor === color ? "ring-[1.5px] ring-blue-500 ring-offset-1" : ""}
