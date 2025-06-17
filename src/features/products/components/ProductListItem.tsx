@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { capitalizeFirstLetter } from "../utils/productHelpers";
 import { Link } from "react-router";
+import ColorPicker from "./ColorPicker";
 
 interface Product {
   product_id: string;
@@ -134,48 +135,13 @@ function ProductListItem({
             </p>
           )}
         </div>
-        <div
-          className="flex gap-[8px] pt-[16px] pb-[34px]"
-          role="group"
-          aria-label="Color selection"
-        >
-          {uniqueColors.map((color) => {
-            const colorInventoryItem = inventoryItems.find(
-              (item) => item.color === color
-            );
-            const isOutOfStock = colorInventoryItem?.stock === 0;
-
-            return (
-              <button
-                key={color}
-                onClick={() => setSelectedColor(color)}
-                className={`relative hover:ring-[0.5px] w-[16px] h-[16px] rounded-[50%] outline-none ${getColorClass(color)} 
-                  ${
-                    selectedColor === color
-                      ? "ring-[1.5px] ring-blue-500 ring-offset-1 relative"
-                      : "focus:ring-4 focus:ring-blue-100"
-                  }
-                  }`}
-                aria-label={`Select ${color} color`}
-                aria-pressed={selectedColor === color}
-                aria-disabled={isOutOfStock}
-                role="radio"
-                aria-checked={selectedColor === color}
-              >
-                {isOutOfStock && (
-                  <div className="absolute top-[0.9px] left-[0.2px]">
-                    <DiagonalLine />
-                  </div>
-                )}
-
-                {selectedColor === color && !isOutOfStock && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <TickIcon color={color} />
-                  </div>
-                )}
-              </button>
-            );
-          })}
+        <div className="pt-[16px] pb-[34px]">
+          <ColorPicker
+            colors={uniqueColors}
+            selectedColor={selectedColor}
+            onColorSelect={setSelectedColor}
+            inventoryItems={inventoryItems}
+          />
         </div>
       </div>
     </div>

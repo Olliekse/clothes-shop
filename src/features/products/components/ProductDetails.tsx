@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
+import { useState } from "react";
 
 import { dataService } from "../../../api/dataService";
 
@@ -40,6 +41,7 @@ interface Product {
 
 function ProductDetails() {
   const { id } = useParams();
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
 
   const { data: product, isLoading } = useQuery<Product>({
     queryKey: ["product", id],
@@ -74,6 +76,9 @@ function ProductDetails() {
         <p className="text-neutral-600 pb-[32px]">{product.description}</p>
         <ColorPicker
           colors={dataService.getProductColors(product.product_id)}
+          selectedColor={selectedColor}
+          onColorSelect={setSelectedColor}
+          inventoryItems={product.inventory}
         />
         <Sizes sizes={dataService.getProductSizes(product.product_id)} />
         <Quantity />
