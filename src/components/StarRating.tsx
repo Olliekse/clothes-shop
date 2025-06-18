@@ -54,9 +54,9 @@ function StarRating({
   });
 
   return (
-    <div className="flex items-center gap-[8px] pt-[16px] pb-[32px]">
+    <div className="flex items-center gap-[8px] pt-[16px] pb-[34px]">
       <span className="text-xl text-neutral-900">{validRating.toFixed(1)}</span>
-      <div className="flex gap-[4px]">{stars}</div>
+      <div className="flex gap-[5px]">{stars}</div>
       {reviewCount > 0 && (
         <span className="font-medium text-sm text-indigo-700">
           See all {reviewCount} reviews

@@ -59,10 +59,10 @@ function ProductDetails() {
   const defaultInventoryItem = product.inventory[0];
 
   return (
-    <div className="min-[375px]:w-[100%] min-[1440px]:w-[1280px] min-[375px]:py-[16px] min-[375px]:px-[16px] min-[768px]:py-[16px] min-[768px]:px-[32px] min-[1440px]:grid min-[1440px]:grid-cols-2">
+    <div className="min-[375px]:w-[100%] min-[1440px]:w-[1280px] min-[1440px]:grid min-[1440px]:grid-cols-[592px_592px] min-[1440px]:px-[96px] min-[1440px]:gap-[32px]">
       <ImageGrid images={product.images} />
-      <div className="min-[1440px]:pl-[32px] min-[1440px]:py-[96px] min-[375px]:px-[16px]">
-        <h1 className="font-semibold text-3xl text-neutral-900 pb-[20px] min-[1440px]:text-font-semibold min-[1440px]:text-5xl min-[1440px]:pt-[0]">
+      <div className="min-[1440px]:py-[96px] min-[375px]:px-[16px] min-[1440px]:p-0">
+        <h1 className="font-semibold text-3xl text-neutral-900 pb-[20px] min-[768px]:text-font-semibold min-[768px]:text-5xl min-[1440px]:pt-[0]">
           {product.name}
         </h1>
         <Pricing
@@ -79,10 +79,11 @@ function ProductDetails() {
           selectedColor={selectedColor}
           onColorSelect={setSelectedColor}
           inventoryItems={product.inventory}
+          size="lg"
         />
         <Sizes sizes={dataService.getProductSizes(product.product_id)} />
         <Quantity />
-        <Button type="addToCart">Add to cart</Button>
+        <Button type="addToCart">Add to Cart</Button>
         <Description />
       </div>
     </div>

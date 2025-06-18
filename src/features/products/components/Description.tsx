@@ -14,7 +14,7 @@ function Description() {
           <path d="M12 24.6666C6.47715 24.6666 2 20.1894 2 14.6666C2 9.14378 6.47715 4.66663 12 4.66663C17.5228 4.66663 22 9.14378 22 14.6666C22 20.1894 17.5228 24.6666 12 24.6666ZM12 22.6666C16.4183 22.6666 20 19.0849 20 14.6666C20 10.2483 16.4183 6.66663 12 6.66663C7.58172 6.66663 4 10.2483 4 14.6666C4 19.0849 7.58172 22.6666 12 22.6666ZM7 13.6666H17V15.6666H7V13.6666Z" />
         </svg>
       </div>
-      <div className="border-b border-solid border-neutral-200 pb-[32px] mb-[32px]">
+      <div className="border-b border-solid border-neutral-200 pb-[25px] mb-[32px]">
         <ul className="min-[1440px]:w-[544px] list-disc text-neutral-600 pl-6 min-[375px]:w-[263px] min-[768px]:w-full">
           <li>
             <p>Designed for comfort and durability.</p>
@@ -46,7 +46,7 @@ function Description() {
           <path d="M12 24.6666C6.47715 24.6666 2 20.1894 2 14.6666C2 9.14378 6.47715 4.66663 12 4.66663C17.5228 4.66663 22 9.14378 22 14.6666C22 20.1894 17.5228 24.6666 12 24.6666ZM12 22.6666C16.4183 22.6666 20 19.0849 20 14.6666C20 10.2483 16.4183 6.66663 12 6.66663C7.58172 6.66663 4 10.2483 4 14.6666C4 19.0849 7.58172 22.6666 12 22.6666ZM7 13.6666H17V15.6666H7V13.6666Z" />
         </svg>
       </div>
-      <div className="border-b border-solid border-neutral-200 pb-[32px] mb-[32px]">
+      <div className="border-b border-solid border-neutral-200 pb-[25px] mb-[32px]">
         <ul className="min-[1440px]:w-[544px] list-disc text-neutral-600 pl-6 min-[375px]:w-[263px] min-[768px]:w-full">
           <li>
             <p>Machine wash cold on a gentle cycle.</p>

@@ -16,7 +16,7 @@ function Button({ type, children }: ButtonProps) {
 
   if (type === "addToCart") {
     return (
-      <button className="w-full flex justify-center items-center gap-2.5 self-stretch bg-indigo-700 px-6 py-4 rounded text-white">
+      <button className="w-full flex justify-center items-center gap-2.5 bg-indigo-700 px-6 py-3 rounded text-white min-[768px]:py-4 font-medium text-md min-[768px]:text-lg">
         {children}
       </button>
     );

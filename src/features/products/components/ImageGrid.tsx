@@ -11,10 +11,10 @@ function ImageGrid({ images }: ImageGridProps) {
   const thumbnailImages = images.slice(1, 5);
 
   return (
-    <div className="flex flex-col gap-[24px] min-[375px]:py-[48px] min-[375px]:px-[16px] min-[768px]:pt-[64px] min-[1440px]:py-[96px]">
+    <div className="flex flex-col gap-[26px] min-[375px]:pt-[48px] min-[375px]:pb-[50px] min-[375px]:px-[16px] min-[768px]:pt-[64px] min-[1440px]:py-[96px] min-[1440px]:p-0">
       {mainImage && (
         <img
-          className="min-[375px]:h-[400px] min-[375px]:w-[311px] object-cover rounded-md min-[768px]:w-[704px] min-[768px]:h-[800px]  min-[1440px]:h-[800px]"
+          className="min-[375px]:h-[400px] min-[375px]:w-[311px] object-cover rounded-md min-[768px]:w-[704px] min-[768px]:h-[800px] min-[1440px]:h-[800px] min-[1440px]:w-[592px]"
           src={mainImage}
           alt="Main product image"
         />

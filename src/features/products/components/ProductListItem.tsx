@@ -85,6 +85,7 @@ function ProductListItem({
             selectedColor={selectedColor}
             onColorSelect={setSelectedColor}
             inventoryItems={inventoryItems}
+            size="sm"
           />
         </div>
       </div>

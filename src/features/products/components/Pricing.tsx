@@ -11,11 +11,11 @@ function Pricing({ price, discount = 0 }: PricingProps) {
     <>
       <div className="flex gap-[8px] items-center">
         <p className="font-medium text-3xl text-neutral-600 mb-[8px]">
-          ${discountedPrice.toFixed(2)}
+          ${discountedPrice}
         </p>
         {hasDiscount && (
           <span className="line-through font-medium text-lg text-neutral-400">
-            ${price.toFixed(2)}
+            ${price}
           </span>
         )}
       </div>

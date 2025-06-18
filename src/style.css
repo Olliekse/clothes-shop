@@ -28,22 +28,6 @@ body {
   }
 }
 
-/*  min-[375px]:p-[16px] min-[768]:p-[32px] min-[375px]:w-full md:flex-row md:flex-wrap md:gap-[32px] md:justify-between min-[1440px]:max-w-[1280px] */
-
 * {
   box-sizing: border-box;
-}
-
-.credits {
-  color: #777;
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  font-size: 11px;
-  text-align: center;
-}
-
-.credits a {
-  color: #000;
-  font-weight: bold;
 }

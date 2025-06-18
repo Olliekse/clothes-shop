@@ -3,14 +3,18 @@ interface ColorPickerProps {
   selectedColor: string | null;
   onColorSelect: (color: string) => void;
   inventoryItems?: { color: string; stock: number }[];
+  size?: "sm" | "lg";
 }
 
-const TickIcon = ({ color }: { color: string }) => {
+const TickIcon = ({ color, size }: { color: string; size: "sm" | "lg" }) => {
   const tickColor = color === "white" || color === "beige" ? "black" : "white";
+  const dimensions =
+    size === "sm"
+      ? { width: "12", height: "12" }
+      : { width: "24", height: "24" };
   return (
     <svg
-      width="12"
-      height="12"
+      {...dimensions}
       viewBox="0 0 12 12"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -23,11 +27,14 @@ const TickIcon = ({ color }: { color: string }) => {
   );
 };
 
-const DiagonalLine = () => {
+const DiagonalLine = ({ size }: { size: "sm" | "lg" }) => {
+  const dimensions =
+    size === "sm"
+      ? { width: "16", height: "15" }
+      : { width: "32", height: "30" };
   return (
     <svg
-      width="16"
-      height="15"
+      {...dimensions}
       viewBox="0 0 16 15"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +56,7 @@ function ColorPicker({
   selectedColor,
   onColorSelect,
   inventoryItems = [],
+  size = "sm",
 }: ColorPickerProps) {
   function getColorClass(color: string) {
     const colorMap: { [key: string]: string } = {
@@ -67,46 +75,60 @@ function ColorPicker({
     return colorMap[color] || "bg-gray-700";
   }
 
-  return (
-    <div className="flex gap-[8px]" role="group" aria-label="Color selection">
-      {colors.map((color) => {
-        const colorInventoryItem = inventoryItems.find(
-          (item) => item.color === color
-        );
-        const isOutOfStock = colorInventoryItem?.stock === 0;
+  const sizeClasses = {
+    sm: "w-[16px] h-[16px]",
+    lg: "w-[38px] h-[38px]",
+  };
 
-        return (
-          <button
-            key={color}
-            onClick={() => !isOutOfStock && onColorSelect(color)}
-            className={`relative hover:ring-[0.5px] w-[16px] h-[16px] rounded-[50%] outline-none ${getColorClass(color)} 
+  return (
+    <>
+      <p className="text-sm text-neutral-500 pb-[25px] min-[768px]:pb-[26px]">
+        Available Colors
+      </p>
+      <div
+        className="gap-[35px] flex pb-[41px] min-[1440px]:pl-[10px] min-[768px]:pl-[10px] pl-[8px]"
+        role="group"
+        aria-label="Color selection"
+      >
+        {colors.map((color) => {
+          const colorInventoryItem = inventoryItems.find(
+            (item) => item.color === color
+          );
+          const isOutOfStock = colorInventoryItem?.stock === 0;
+
+          return (
+            <button
+              key={color}
+              onClick={() => !isOutOfStock && onColorSelect(color)}
+              className={`relative hover:ring-[0.5px] rounded-[50%] outline-none ${getColorClass(color)} ${sizeClasses[size]}
               ${
                 selectedColor === color
                   ? "ring-[1.5px] ring-blue-500 ring-offset-1 relative"
                   : "focus:ring-4 focus:ring-blue-100"
               }
               }`}
-            aria-label={`Select ${color} color`}
-            aria-pressed={selectedColor === color}
-            aria-disabled={isOutOfStock}
-            role="radio"
-            aria-checked={selectedColor === color}
-          >
-            {isOutOfStock && (
-              <div className="absolute top-[0.9px] left-[0.2px]">
-                <DiagonalLine />
-              </div>
-            )}
+              aria-label={`Select ${color} color`}
+              aria-pressed={selectedColor === color}
+              aria-disabled={isOutOfStock}
+              role="radio"
+              aria-checked={selectedColor === color}
+            >
+              {isOutOfStock && (
+                <div className="absolute top-[0.9px] left-[0.2px]">
+                  <DiagonalLine size={size} />
+                </div>
+              )}
 
-            {selectedColor === color && !isOutOfStock && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <TickIcon color={color} />
-              </div>
-            )}
-          </button>
-        );
-      })}
-    </div>
+              {selectedColor === color && !isOutOfStock && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <TickIcon color={color} size={size} />
+                </div>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
