@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 interface StarRatingProps {
   rating?: number;
   maxStars?: number;
@@ -58,8 +60,13 @@ function StarRating({
       <span className="text-xl text-neutral-900">{validRating.toFixed(1)}</span>
       <div className="flex gap-[5px]">{stars}</div>
       {reviewCount > 0 && (
-        <span className="font-medium text-sm text-indigo-700">
+        <Link to="" className="font-medium text-sm text-indigo-700">
           See all {reviewCount} reviews
+        </Link>
+      )}
+      {reviewCount === 0 && (
+        <span>
+          "No reviews yet. <Link to="">Be the first</Link>"
         </span>
       )}
     </div>

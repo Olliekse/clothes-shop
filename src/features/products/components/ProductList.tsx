@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { mockData } from "../../../api/mockData";
 import ProductListItem from "./ProductListItem";
 import Button from "../../../components/Button";
+import { dataService } from "../../../api/dataService";
 
 interface Product {
   product_id: string;
@@ -21,7 +22,7 @@ interface ProductsResponse {
 interface InventoryItem {
   product_id: string;
   color: string;
-  size: string;
+  size: string | null;
   list_price: number;
   stock: number;
   discount_percentage: number;
@@ -94,8 +95,8 @@ function ProductList() {
             const productImage = productImages.find(
               (img) => img.product_id === product.product_id
             );
-            const inventoryItems = inventoryData.filter(
-              (item) => item.product_id === product.product_id
+            const inventoryItems = dataService.getProductInventory(
+              product.product_id
             );
 
             if (!productImage || !inventoryItems.length) return null;

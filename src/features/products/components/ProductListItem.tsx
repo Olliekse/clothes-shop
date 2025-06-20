@@ -2,6 +2,7 @@ import { useState } from "react";
 import { capitalizeFirstLetter } from "../utils/productHelpers";
 import { Link } from "react-router";
 import ColorPicker from "./ColorPicker";
+import { dataService } from "../../../api/dataService";
 
 interface Product {
   product_id: string;
@@ -15,7 +16,9 @@ interface ProductImage {
 }
 
 interface InventoryItem {
+  product_id: string;
   color: string;
+  size: string | null;
   list_price: number;
   stock: number;
   discount_percentage: number;
@@ -34,13 +37,7 @@ function ProductListItem({
 }) {
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
 
-  const uniqueColors = [
-    ...new Set(
-      productImages
-        .filter((img) => img.product_id === product.product_id)
-        .map((img) => img.color)
-    ),
-  ];
+  const uniqueColors = dataService.getProductColors(product.product_id);
 
   const defaultInventoryItem = inventoryItems[0];
 
@@ -86,6 +83,7 @@ function ProductListItem({
             onColorSelect={setSelectedColor}
             inventoryItems={inventoryItems}
             size="sm"
+            gap="sm"
           />
         </div>
       </div>

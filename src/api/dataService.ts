@@ -1,5 +1,6 @@
 import { mockData } from "./mockData";
 import productReviews from "./product-reviews.json";
+import productInfo from "./product-info.json";
 
 // Types
 export interface Product {
@@ -36,6 +37,12 @@ export interface ProductReview {
   rating: number;
   content: string | null;
   created_at: string;
+}
+
+export interface ProductInfo {
+  product_id: string;
+  title: string;
+  description: string[];
 }
 
 export interface ProductWithDetails extends Product {
@@ -157,6 +164,11 @@ class DataService {
   // Get review count for a product
   getProductReviewCount(productId: string): number {
     return this.getProductReviews(productId).length;
+  }
+
+  // Get product info (Features, Fabric & Care, Shipping) for a specific product
+  getProductInfo(productId: string): ProductInfo[] {
+    return productInfo.filter((info) => info.product_id === productId);
   }
 }
 

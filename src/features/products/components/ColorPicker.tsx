@@ -1,16 +1,19 @@
+import { useEffect } from "react";
+
 interface ColorPickerProps {
   colors: string[];
   selectedColor: string | null;
   onColorSelect: (color: string) => void;
   inventoryItems?: { color: string; stock: number }[];
   size?: "sm" | "lg";
+  gap?: "sm" | "lg";
 }
 
 const TickIcon = ({ color, size }: { color: string; size: "sm" | "lg" }) => {
   const tickColor = color === "white" || color === "beige" ? "black" : "white";
   const dimensions =
     size === "sm"
-      ? { width: "12", height: "12" }
+      ? { width: "12", height: "14" }
       : { width: "24", height: "24" };
   return (
     <svg
@@ -30,8 +33,8 @@ const TickIcon = ({ color, size }: { color: string; size: "sm" | "lg" }) => {
 const DiagonalLine = ({ size }: { size: "sm" | "lg" }) => {
   const dimensions =
     size === "sm"
-      ? { width: "16", height: "15" }
-      : { width: "32", height: "30" };
+      ? { width: "14", height: "16" }
+      : { width: "40", height: "40" };
   return (
     <svg
       {...dimensions}
@@ -57,6 +60,7 @@ function ColorPicker({
   onColorSelect,
   inventoryItems = [],
   size = "sm",
+  gap = "lg",
 }: ColorPickerProps) {
   function getColorClass(color: string) {
     const colorMap: { [key: string]: string } = {
@@ -80,26 +84,33 @@ function ColorPicker({
     lg: "w-[38px] h-[38px]",
   };
 
+  const gapClasses = {
+    sm: "gap-[12px]",
+    lg: "gap-[35px]",
+  };
+
   return (
     <>
       <p className="text-sm text-neutral-500 pb-[25px] min-[768px]:pb-[26px]">
         Available Colors
       </p>
       <div
-        className="gap-[35px] flex pb-[41px] min-[1440px]:pl-[10px] min-[768px]:pl-[10px] pl-[8px]"
+        className={`${gapClasses[gap]} flex pb-[41px] min-[1440px]:pl-[10px] min-[768px]:pl-[10px] pl-[8px]`}
         role="group"
         aria-label="Color selection"
       >
         {colors.map((color) => {
-          const colorInventoryItem = inventoryItems.find(
+          const colorInventory = inventoryItems.filter(
             (item) => item.color === color
           );
-          const isOutOfStock = colorInventoryItem?.stock === 0;
+          const isOutOfStock =
+            colorInventory.length > 0 &&
+            colorInventory.every((item) => item.stock === 0);
 
           return (
             <button
               key={color}
-              onClick={() => !isOutOfStock && onColorSelect(color)}
+              onClick={() => onColorSelect(color)}
               className={`relative hover:ring-[0.5px] rounded-[50%] outline-none ${getColorClass(color)} ${sizeClasses[size]}
               ${
                 selectedColor === color
@@ -114,7 +125,13 @@ function ColorPicker({
               aria-checked={selectedColor === color}
             >
               {isOutOfStock && (
-                <div className="absolute top-[0.9px] left-[0.2px]">
+                <div
+                  className={`absolute ${
+                    size === "sm"
+                      ? "top-[0] left-[1px]"
+                      : "top-[-1px] left-[-2px]"
+                  }`}
+                >
                   <DiagonalLine size={size} />
                 </div>
               )}
