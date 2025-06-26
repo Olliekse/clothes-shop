@@ -1,31 +1,48 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface QuantityProps {
   disabled?: boolean;
-  stock: number;
+  stock?: number;
+  initialQuantity?: number;
+  onQuantityChange?: (quantity: number) => void;
 }
 
-function Quantity({ disabled = false, stock }: QuantityProps) {
-  const [count, setCount] = useState(0);
+function Quantity({
+  disabled = false,
+  stock,
+  initialQuantity = 0,
+  onQuantityChange,
+}: QuantityProps) {
+  const [count, setCount] = useState(initialQuantity);
   const [showTooltip, setShowTooltip] = useState(false);
 
+  // Update internal state when initialQuantity prop changes
+  useEffect(() => {
+    setCount(initialQuantity);
+  }, [initialQuantity]);
+
   function handleDecrement(): void {
-    if (count > 0 && !disabled) setCount(count - 1);
+    if (count > 0 && !disabled) {
+      const newCount = count - 1;
+      setCount(newCount);
+      onQuantityChange?.(newCount);
+    }
     setShowTooltip(false);
   }
 
   function handleIncrement(): void {
-    if (!disabled && count < stock) {
-      setCount(count + 1);
+    if (!disabled && (!stock || count < stock)) {
+      const newCount = count + 1;
+      setCount(newCount);
+      onQuantityChange?.(newCount);
       setShowTooltip(false);
-    } else if (count >= stock) {
+    } else if (stock && count >= stock) {
       setShowTooltip(true);
     }
   }
 
   return (
-    <div className="py-[32px]">
-      <p className="pb-[16px] text-sm text-neutral-500">Quantity</p>
+    <div>
       <div className="relative h-[36px] px-[11px] justify-between w-[125px] flex items-center bg-neutral-50 p-0.5 rounded-md border border-solid border-neutral-200">
         <button
           onClick={handleDecrement}

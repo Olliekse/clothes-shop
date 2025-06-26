@@ -2,7 +2,7 @@ import { useState } from "react";
 import { capitalizeFirstLetter } from "../utils/productHelpers";
 import { Link } from "react-router";
 import ColorPicker from "./ColorPicker";
-import { dataService } from "../../../api/dataService";
+import { dataService, InventoryItem } from "../../../api/dataService";
 
 interface Product {
   product_id: string;
@@ -15,25 +15,14 @@ interface ProductImage {
   image_url: string;
 }
 
-interface InventoryItem {
-  product_id: string;
-  color: string;
-  size: string | null;
-  list_price: number;
-  stock: number;
-  discount_percentage: number;
-}
-
 function ProductListItem({
   product,
   productImage,
   inventoryItems,
-  productImages,
 }: {
   product: Product;
   productImage: ProductImage;
   inventoryItems: InventoryItem[];
-  productImages: ProductImage[];
 }) {
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
 
@@ -68,13 +57,14 @@ function ProductListItem({
             $
             {defaultInventoryItem.list_price -
               (defaultInventoryItem.list_price / 100) *
-                defaultInventoryItem.discount_percentage}
+                (defaultInventoryItem.discount_percentage ?? 0)}
           </p>
-          {defaultInventoryItem.discount_percentage && (
-            <p className="text-xs line-through text-neutral-600 align-bottom">
-              ${defaultInventoryItem.list_price}
-            </p>
-          )}
+          {defaultInventoryItem.discount_percentage &&
+            defaultInventoryItem.discount_percentage > 0 && (
+              <p className="text-xs line-through text-neutral-600 align-bottom">
+                ${defaultInventoryItem.list_price}
+              </p>
+            )}
         </div>
         <div className="pt-[16px] pb-[34px]">
           <ColorPicker

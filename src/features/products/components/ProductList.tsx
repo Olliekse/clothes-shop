@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { mockData } from "../../../api/mockData";
 import ProductListItem from "./ProductListItem";
 import Button from "../../../components/Button";
-import { dataService } from "../../../api/dataService";
+import { dataService, InventoryItem } from "../../../api/dataService";
 
 interface Product {
   product_id: string;
@@ -17,15 +17,6 @@ interface ProductImage {
 
 interface ProductsResponse {
   products: Product[];
-}
-
-interface InventoryItem {
-  product_id: string;
-  color: string;
-  size: string | null;
-  list_price: number;
-  stock: number;
-  discount_percentage: number;
 }
 
 function ProductList() {
@@ -107,7 +98,6 @@ function ProductList() {
                 product={product}
                 productImage={productImage}
                 inventoryItems={inventoryItems}
-                productImages={productImages}
               />
             );
           })}

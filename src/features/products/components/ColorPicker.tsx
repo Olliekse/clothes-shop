@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 interface ColorPickerProps {
   colors: string[];
   selectedColor: string | null;

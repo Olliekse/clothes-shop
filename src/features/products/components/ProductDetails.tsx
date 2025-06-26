@@ -2,15 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 
+import { useCartStore } from "../../../store/cartStore";
 import { dataService } from "../../../api/dataService";
-import inventoryData from "../../../api/inventory.json";
 
 import ImageGrid from "./ImageGrid";
 import Pricing from "./Pricing";
 import StarRating from "../../../components/StarRating";
 import ColorPicker from "./ColorPicker";
 import Sizes from "./Sizes";
-import Quantity from "./Quantity";
+import Quantity from "../../../components/Quantity";
 import Button from "../../../components/Button";
 import Description from "./Description";
 
@@ -44,6 +44,8 @@ function ProductDetails() {
   const { id } = useParams();
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [quantity, setQuantity] = useState(0);
+  const { items, addToCart } = useCartStore();
 
   const { data: product, isLoading } = useQuery<Product>({
     queryKey: ["product", id],
@@ -129,12 +131,43 @@ function ProductDetails() {
     selectedInventory.length > 0 &&
     selectedInventory.every((item) => item.stock === 0);
 
+  const selectedInventoryItem = selectedInventory.find(
+    (item) => normalizeSize(item.size) === normalizedSelectedSize
+  );
+
+  const selectedImage = product
+    ? product.images.find((img) => img.color === selectedColor)?.image_url ||
+      product.images[0]?.image_url
+    : undefined;
+
+  const handleAddToCart = () => {
+    if (!product || !selectedInventoryItem || quantity <= 0 || !selectedImage) {
+      return;
+    }
+
+    const cartItem = {
+      product_id: product.product_id,
+      name: product.name,
+      description: product.description,
+      price:
+        selectedInventoryItem.sale_price || selectedInventoryItem.list_price,
+      quantity: quantity,
+      color: selectedColor ? String(selectedColor) : "",
+      size: selectedSize ? String(selectedSize) : "",
+      image: selectedImage,
+      discount:
+        selectedInventoryItem.discount_percentage ??
+        selectedInventoryItem.discount ??
+        0,
+    };
+
+    addToCart(cartItem);
+  };
+
   if (isLoading) return <div>Loading...</div>;
   if (!product) return <div>Product not found</div>;
 
   const defaultInventoryItem = product.inventory[0];
-
-  const productId = product.product_id;
 
   return (
     <div className="min-[375px]:w-[100%] min-[1440px]:w-[1280px] min-[1440px]:grid min-[1440px]:grid-cols-[592px_592px] min-[1440px]:px-[96px] min-[1440px]:gap-[32px]">
@@ -166,8 +199,17 @@ function ProductDetails() {
           selectedSize={normalizedSelectedSize}
           inventory={selectedInventory}
         />
-        <Quantity disabled={isFullyOutOfStock} stock={stockLevel} />
-        <Button type="addToCart" disabled={isFullyOutOfStock}>
+        <p className="pt-[32px] pb-[16px] text-sm text-neutral-500">Quantity</p>
+        <Quantity
+          disabled={isFullyOutOfStock}
+          stock={stockLevel}
+          onQuantityChange={setQuantity}
+        />
+        <Button
+          onClick={handleAddToCart}
+          type="addToCartCheckout"
+          disabled={isFullyOutOfStock}
+        >
           Add to Cart
         </Button>
         <Description productId={product.product_id} />
