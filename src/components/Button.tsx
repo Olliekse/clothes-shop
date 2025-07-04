@@ -32,6 +32,30 @@ function Button({ type, children, disabled, onClick }: ButtonProps) {
     );
   }
 
+  if (type === "explore") {
+    return (
+      <button
+        className="w-[192px] flex justify-center items-center gap-[8px] min-[768px]:gap-[13px] bg-indigo-700 py-[12px] px-[18px] rounded text-white font-medium disabled:bg-neutral-100 disabled:text-neutral-400"
+        disabled={disabled}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    );
+  }
+
+  if (type === "apply") {
+    return (
+      <button
+        className="disabled:bg-neutral-100 disabled:text-neutral-400 flex justify-center items-center bg-white px-[21px] rounded border-[0.5px] border-solid shadow-md hover:bg-neutral-50 transition-all duration-200 focus:outline-4 focus:outline-offset-1 focus:outline-purple-200"
+        disabled={disabled}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    );
+  }
+
   return null;
 }
 
