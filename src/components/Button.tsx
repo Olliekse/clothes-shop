@@ -23,7 +23,7 @@ function Button({ type, children, disabled, onClick }: ButtonProps) {
   if (type === "addToCartCheckout") {
     return (
       <button
-        className="w-full flex justify-center items-center gap-2.5 bg-indigo-700 px-6 py-3 rounded text-white min-[768px]:py-4 font-medium text-md min-[768px]:text-lg disabled:bg-neutral-100 disabled:text-neutral-400 mt-[32px]"
+        className="w-full flex justify-center items-center gap-2.5 bg-indigo-700 px-6 py-3 rounded text-white min-[768px]:py-4 font-medium text-md min-[768px]:text-lg disabled:bg-neutral-100 disabled:text-neutral-400 mt-[32px] min-[768px]:mt-0"
         disabled={disabled}
         onClick={onClick}
       >
