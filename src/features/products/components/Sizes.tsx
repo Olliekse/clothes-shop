@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 interface SizesProps {
   sizes: (string | null)[];
@@ -36,35 +36,32 @@ function Sizes({
   };
 
   // Normalize and filter sizes
-  const validSizes = sizes
-    .filter((size): size is string => size !== null)
-    .map((size) => {
-      const normalizedSize = String(size).toLowerCase().trim();
-      return sizeMap[normalizedSize] || normalizedSize.toUpperCase();
-    });
+  const validSizes = useMemo(() => {
+    return sizes
+      .filter((size): size is string => size !== null)
+      .map((size) => {
+        const normalizedSize = String(size).toLowerCase().trim();
+        return sizeMap[normalizedSize] || normalizedSize.toUpperCase();
+      });
+  }, [sizeMap, sizes]);
 
-  let sortedSizes;
+  const sortedSizes = useMemo(() => {
+    if (validSizes.every((s) => !isNaN(Number(s)))) {
+      return validSizes.slice().sort((a, b) => Number(a) - Number(b));
+    } else {
+      return validSizes.slice().sort((a, b) => {
+        const aIndex = sizeOrder.indexOf(a);
+        const bIndex = sizeOrder.indexOf(b);
 
-  if (validSizes.every((s) => !isNaN(Number(s)))) {
-    sortedSizes = validSizes.sort((a, b) => Number(a) - Number(b));
-  } else {
-    sortedSizes = validSizes.sort((a, b) => {
-      const aIndex = sizeOrder.indexOf(a);
-      const bIndex = sizeOrder.indexOf(b);
-
-      // If both sizes are in our predefined order, sort by that
-      if (aIndex !== -1 && bIndex !== -1) {
-        return aIndex - bIndex;
-      }
-
-      // If only one size is in our predefined order, prioritize it
-      if (aIndex !== -1) return -1;
-      if (bIndex !== -1) return 1;
-
-      // If neither size is in our predefined order, sort alphabetically
-      return a.localeCompare(b);
-    });
-  }
+        if (aIndex !== -1 && bIndex !== -1) {
+          return aIndex - bIndex;
+        }
+        if (aIndex !== -1) return -1;
+        if (bIndex !== -1) return 1;
+        return a.localeCompare(b);
+      });
+    }
+  }, [validSizes, sizeOrder]);
 
   const handleSizeClick = (size: string) => {
     if (onSizeSelect) {
@@ -118,4 +115,4 @@ function Sizes({
   );
 }
 
-export default Sizes;
+export default React.memo(Sizes);

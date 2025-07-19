@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router";
 
 interface StarRatingProps {
@@ -73,4 +74,4 @@ function StarRating({
   );
 }
 
-export default StarRating;
+export default React.memo(StarRating);

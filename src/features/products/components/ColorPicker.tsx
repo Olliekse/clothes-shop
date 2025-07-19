@@ -1,3 +1,5 @@
+import React from "react";
+
 interface ColorPickerProps {
   colors: string[];
   selectedColor: string | null;
@@ -147,4 +149,4 @@ function ColorPicker({
   );
 }
 
-export default ColorPicker;
+export default React.memo(ColorPicker);

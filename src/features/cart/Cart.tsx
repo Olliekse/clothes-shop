@@ -244,7 +244,7 @@ function Cart() {
                 ${formatPrice(total)}
               </span>
             </div>
-            <Button type="addToCartCheckout" onClick={() => {}}>
+            <Button type="Checkout" onClick={() => {}}>
               Checkout
             </Button>
           </div>

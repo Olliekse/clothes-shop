@@ -3,6 +3,7 @@ import { mockData } from "../../../api/mockData";
 import ProductListItem from "./ProductListItem";
 import Button from "../../../components/Button";
 import { dataService, InventoryItem } from "../../../api/dataService";
+import { useMemo } from "react";
 
 interface Product {
   product_id: string;
@@ -61,6 +62,11 @@ function ProductList() {
     },
   });
 
+  const filteredProducts = useMemo(() => {
+    if (!productsData?.products) return [];
+    return productsData.products.filter((_, index) => index < 8);
+  }, [productsData]);
+
   if (productsLoading || imagesLoading || inventoryLoading)
     return <div>Loading...</div>;
   if (!productsData?.products || !productImages || !inventoryData)
@@ -72,35 +78,35 @@ function ProductList() {
         <h1 className="font-semibold text-2xl text-neutral-900">
           Latest Arrivals
         </h1>
-        <Button type="viewAll">View all</Button>
+        <Button onClick={() => {}} type="viewAll">
+          View all
+        </Button>
       </div>
       <div className="flex flex-wrap justify-between">
-        {productsData.products
-          .filter((_, index) => index < 8)
-          .map((product) => {
-            if (!Array.isArray(productImages)) {
-              console.error("productImages is not an array:", productImages);
-              return null;
-            }
+        {filteredProducts.map((product) => {
+          if (!Array.isArray(productImages)) {
+            console.error("productImages is not an array:", productImages);
+            return null;
+          }
 
-            const productImage = productImages.find(
-              (img) => img.product_id === product.product_id
-            );
-            const inventoryItems = dataService.getProductInventory(
-              product.product_id
-            );
+          const productImage = productImages.find(
+            (img) => img.product_id === product.product_id
+          );
+          const inventoryItems = dataService.getProductInventory(
+            product.product_id
+          );
 
-            if (!productImage || !inventoryItems.length) return null;
+          if (!productImage || !inventoryItems.length) return null;
 
-            return (
-              <ProductListItem
-                key={product.product_id}
-                product={product}
-                productImage={productImage}
-                inventoryItems={inventoryItems}
-              />
-            );
-          })}
+          return (
+            <ProductListItem
+              key={product.product_id}
+              product={product}
+              productImage={productImage}
+              inventoryItems={inventoryItems}
+            />
+          );
+        })}
       </div>
     </div>
   );

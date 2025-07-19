@@ -1,5 +1,5 @@
 import { dataService } from "../../../api/dataService";
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface DescriptionProps {
   productId: string;
@@ -87,4 +87,4 @@ function Description({ productId }: DescriptionProps) {
   );
 }
 
-export default Description;
+export default React.memo(Description);

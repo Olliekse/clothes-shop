@@ -1,3 +1,5 @@
+import React from "react";
+
 interface PricingProps {
   price: number;
   discount?: number;
@@ -28,4 +30,4 @@ function Pricing({ price, discount = 0 }: PricingProps) {
   );
 }
 
-export default Pricing;
+export default React.memo(Pricing);

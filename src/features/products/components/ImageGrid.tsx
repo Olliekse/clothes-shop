@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 interface ImageGridProps {
   images: Array<{
@@ -12,9 +12,11 @@ interface ImageGridProps {
 function ImageGrid({ images, selectedColor }: ImageGridProps) {
   const [mainImage, setMainImage] = useState(images[0]?.image_url);
 
-  const filteredImages = selectedColor
-    ? images.filter((image) => image.color === selectedColor)
-    : images;
+  const filteredImages = useMemo(() => {
+    return selectedColor
+      ? images.filter((image) => image.color === selectedColor)
+      : images;
+  }, [selectedColor, images]);
 
   useEffect(() => {
     if (filteredImages.length > 0) {
@@ -48,4 +50,4 @@ function ImageGrid({ images, selectedColor }: ImageGridProps) {
   );
 }
 
-export default ImageGrid;
+export default React.memo(ImageGrid);

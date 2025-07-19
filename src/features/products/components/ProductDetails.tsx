@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { useCartStore } from "../../../store/cartStore";
 import { dataService } from "../../../api/dataService";
@@ -45,7 +45,7 @@ function ProductDetails() {
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(0);
-  const { items, addToCart } = useCartStore();
+  const { addToCart } = useCartStore();
 
   const { data: product, isLoading } = useQuery<Product>({
     queryKey: ["product", id],
@@ -57,19 +57,37 @@ function ProductDetails() {
     },
   });
 
-  const colors = product
-    ? dataService.getProductColors(product.product_id)
-    : [];
+  const productColors = useMemo(() => {
+    return product ? dataService.getProductColors(product.product_id) : [];
+  }, [product]);
+
+  const productInventory = useMemo(() => {
+    return product ? product.inventory : [];
+  }, [product]);
+
+  const productSizes = useMemo(() => {
+    return product ? dataService.getProductSizes(product.product_id) : [];
+  }, [product]);
+
+  const productRating = useMemo(() => {
+    return product
+      ? dataService.getProductAverageRating(product.product_id)
+      : 0;
+  }, [product]);
+
+  const productReviewCount = useMemo(() => {
+    return product ? dataService.getProductReviewCount(product.product_id) : 0;
+  }, [product]);
 
   useEffect(() => {
-    if (!selectedColor && colors.length > 0) {
-      setSelectedColor(colors[0]);
+    if (!selectedColor && productColors.length > 0) {
+      setSelectedColor(productColors[0]);
     }
-  }, [selectedColor, colors]);
+  }, [selectedColor, productColors]);
 
   useEffect(() => {
-    if (product && selectedColor && product.inventory.length > 0) {
-      const availableSizes = product.inventory
+    if (product && selectedColor && productInventory.length > 0) {
+      const availableSizes = productInventory
         .filter((item) => item.color === selectedColor)
         .map((item) => item.size)
         .filter((size, idx, arr) => size && arr.indexOf(size) === idx);
@@ -78,7 +96,7 @@ function ProductDetails() {
         setSelectedSize(availableSizes[0]);
       }
     }
-  }, [product, selectedColor, selectedSize]);
+  }, [product, selectedColor, selectedSize, productInventory]);
 
   const sizeMap: { [key: string]: string } = {
     xs: "XS",
@@ -97,15 +115,16 @@ function ProductDetails() {
     return sizeMap[normalized] || size.toUpperCase();
   }
 
-  const selectedInventory =
-    product && product.inventory
-      ? product.inventory
+  const selectedInventory = useMemo(() => {
+    return product && productInventory
+      ? productInventory
           .filter((item) => item.color === selectedColor)
           .map((item) => ({
             ...item,
             size: item.size ? normalizeSize(item.size) : null,
           }))
       : [];
+  }, [product, selectedColor, productInventory]);
 
   useEffect(() => {
     if (selectedInventory.length > 0 && !selectedSize) {
@@ -122,14 +141,16 @@ function ProductDetails() {
 
   const normalizedSelectedSize = normalizeSize(selectedSize);
 
-  const stockLevel =
+  const stockLevel = useMemo(() => {
     selectedInventory.find(
       (item) => normalizeSize(item.size) === normalizedSelectedSize
     )?.stock ?? 0;
+  }, [selectedInventory]);
 
-  const isFullyOutOfStock =
+  const isFullyOutOfStock = useMemo(() => {
     selectedInventory.length > 0 &&
-    selectedInventory.every((item) => item.stock === 0);
+      selectedInventory.every((item) => item.stock === 0);
+  }, [selectedInventory]);
 
   const selectedInventoryItem = selectedInventory.find(
     (item) => normalizeSize(item.size) === normalizedSelectedSize
@@ -180,21 +201,18 @@ function ProductDetails() {
           price={defaultInventoryItem.list_price}
           discount={defaultInventoryItem.discount_percentage || 0}
         />
-        <StarRating
-          rating={dataService.getProductAverageRating(product.product_id)}
-          reviewCount={dataService.getProductReviewCount(product.product_id)}
-        />
+        <StarRating rating={productRating} reviewCount={productReviewCount} />
         <p className="text-neutral-600 pb-[32px]">{product.description}</p>
         <ColorPicker
-          colors={dataService.getProductColors(product.product_id)}
+          colors={productColors}
           selectedColor={selectedColor}
           onColorSelect={setSelectedColor}
-          inventoryItems={product.inventory}
+          inventoryItems={productInventory}
           size="lg"
           gap="lg"
         />
         <Sizes
-          sizes={dataService.getProductSizes(product.product_id)}
+          sizes={productSizes}
           onSizeSelect={setSelectedSize}
           selectedSize={normalizedSelectedSize}
           inventory={selectedInventory}
