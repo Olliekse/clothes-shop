@@ -142,14 +142,18 @@ function ProductDetails() {
   const normalizedSelectedSize = normalizeSize(selectedSize);
 
   const stockLevel = useMemo(() => {
-    selectedInventory.find(
-      (item) => normalizeSize(item.size) === normalizedSelectedSize
-    )?.stock ?? 0;
-  }, [selectedInventory]);
+    return (
+      selectedInventory.find(
+        (item) => normalizeSize(item.size) === normalizedSelectedSize
+      )?.stock ?? 0
+    );
+  }, [selectedInventory, normalizedSelectedSize]);
 
   const isFullyOutOfStock = useMemo(() => {
-    selectedInventory.length > 0 &&
-      selectedInventory.every((item) => item.stock === 0);
+    return (
+      selectedInventory.length > 0 &&
+      selectedInventory.every((item) => item.stock === 0)
+    );
   }, [selectedInventory]);
 
   const selectedInventoryItem = selectedInventory.find(
