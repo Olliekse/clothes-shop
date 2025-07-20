@@ -2,17 +2,17 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 import { useEffect, useMemo, useState } from "react";
 
-import { useCartStore } from "../../../store/cartStore";
-import { dataService } from "../../../api/dataService";
+import { useCartStore } from "../../../../store/cartStore";
+import { dataService } from "../../../../api/dataService";
 
-import ImageGrid from "./ImageGrid";
-import Pricing from "./Pricing";
-import StarRating from "../../../components/StarRating";
-import ColorPicker from "./ColorPicker";
-import Sizes from "./Sizes";
-import Quantity from "../../../components/Quantity";
-import Button from "../../../components/Button";
-import Description from "./Description";
+import ImageGrid from "../ImageGrid";
+import Pricing from "../Pricing";
+import StarRating from "../../../../components/StarRating";
+import ColorPicker from "../../../../components/ColorPicker";
+import Sizes from "../Sizes";
+import Quantity from "../../../../components/Quantity";
+import Button from "../../../../components/Button";
+import Description from "../Description";
 
 interface Product {
   product_id: string;

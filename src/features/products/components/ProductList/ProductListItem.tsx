@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { capitalizeFirstLetter } from "../utils/productHelpers";
+import { capitalizeFirstLetter } from "../../utils/productHelpers";
 import { Link } from "react-router";
-import ColorPicker from "./ColorPicker";
-import { dataService, InventoryItem } from "../../../api/dataService";
+import ColorPicker from "../../../../components/ColorPicker";
+import { dataService, InventoryItem } from "../../../../api/dataService";
 
 interface Product {
   product_id: string;

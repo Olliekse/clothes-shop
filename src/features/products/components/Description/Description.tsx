@@ -1,4 +1,4 @@
-import { dataService } from "../../../api/dataService";
+import { dataService } from "../../../../api/dataService";
 import React, { useState } from "react";
 
 interface DescriptionProps {

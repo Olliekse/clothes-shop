@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { mockData } from "../../../api/mockData";
+import { mockData } from "../../../../api/mockData";
 import ProductListItem from "./ProductListItem";
-import Button from "../../../components/Button";
-import { dataService, InventoryItem } from "../../../api/dataService";
+import Button from "../../../../components/Button";
+import { dataService, InventoryItem } from "../../../../api/dataService";
 import { useMemo } from "react";
 
 interface Product {

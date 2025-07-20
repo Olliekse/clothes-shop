@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { Product } from "../../../api/dataService";
+import { Product } from "../../../../api/dataService";
 
 function ProductCard({ product }: { product: Product }) {
   const navigate = useNavigate();

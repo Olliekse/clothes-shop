@@ -87,7 +87,7 @@ export const useCartStore = create<CartState>()(
           console.log("Parsed items:", parsedItems);
           set((state) => {
             console.log("Current state items length:", state.items.length);
-            // Only initialize if cart is empty
+
             if (state.items.length === 0) {
               console.log("Setting items from storage");
               return { items: parsedItems };
