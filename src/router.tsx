@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import ProductList from "./features/products/components/ProductList";
+import { ProductList } from "./features/products/components/ProductList";
 import ProductDetails from "./features/products/components/ProductDetails";
 import Cart from "./features/cart/Cart";
 
