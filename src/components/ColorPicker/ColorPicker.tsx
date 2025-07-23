@@ -80,22 +80,22 @@ function ColorPicker({
   }
 
   const sizeClasses = {
-    sm: "w-[16px] h-[16px]",
-    lg: "w-[38px] h-[38px]",
+    sm: "w-4 h-4",
+    lg: "w-10 h-10",
   };
 
   const gapClasses = {
-    sm: "gap-[12px]",
-    lg: "gap-[35px]",
+    sm: "gap-3",
+    lg: "gap-9",
   };
 
   return (
     <>
-      <p className="text-sm text-neutral-500 pb-[25px] min-[768px]:pb-[26px]">
+      <p className="text-sm text-neutral-500 pb-[25px] md:pb-[26px]">
         Available Colors
       </p>
       <div
-        className={`${gapClasses[gap]} flex pb-[41px] min-[1440px]:pl-[10px] min-[768px]:pl-[10px] pl-[8px]`}
+        className={`${gapClasses[gap]} flex pb-[41px] xl:pl-[10px] md:pl-[10px] pl-[8px]`}
         role="group"
         aria-label="Color selection"
       >
@@ -114,7 +114,7 @@ function ColorPicker({
               className={`relative hover:ring-[0.5px] rounded-[50%] outline-none ${getColorClass(color)} ${sizeClasses[size]}
               ${
                 selectedColor === color
-                  ? "ring-[1.5px] ring-blue-500 ring-offset-1 relative"
+                  ? "ring-2 ring-blue-500 ring-offset-1 relative"
                   : "focus:ring-4 focus:ring-blue-100"
               }
               }`}

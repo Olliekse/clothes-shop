@@ -77,40 +77,40 @@ function Cart() {
 
   return (
     <div
-      className={`flex flex-col px-[12px] min-[768px]:px-[16px] py-[48px] min-[768px]:pt-[64px] min-[1440px]:p-[96px] ${items.length > 0 ? "min-[1440px]:grid" : ""} min-[1440px]:grid-cols-[800px_1fr] min-[1440px]:gap-x-[32px]`}
+      className={`flex flex-col px-3 md:px-4 py-12 md:pt-16 xl:p-[96px] ${items.length > 0 ? "xl:grid" : ""} xl:grid-cols-[800px_1fr] xl:gap-x-[32px] bg-white`}
     >
-      <h1 className="font-semibold text-3xl pb-[32px] text-neutral-900 min-[768px]:font-semibold min-[768px]:text-5xl min-[768px]:text-neutral-900">
+      <h1 className="font-semibold text-3xl pb-8 text-neutral-900 md:font-semibold md:text-5xl md:text-neutral-900">
         Shopping Cart
       </h1>
 
       {items.length > 0 && (
         <>
-          <ul className="min-[1440px]:col-start-1">
+          <ul className="xl:col-start-1">
             {items.map((item, index) => (
               <div
                 key={index}
                 className={`
-              flex flex-col pb-[32px]
-              ${index !== items.length - 1 ? "border-b-[1px] border-dashed border-neutral-200" : "pb-[64px]"}
-              min-[768px]:grid min-[768px]:grid-cols-[280px_1fr] min-[768px]:gap-x-8 min-[768px]:pt-[32px]
+              flex flex-col pb-8
+              ${index !== items.length - 1 ? "border-b border-dashed border-neutral-200" : "pb-16"}
+              min-[768px]:grid md:grid-cols-[280px_1fr] md:gap-x-8 md:pt-[32px]
             `}
               >
                 <img
-                  className="w-full object-cover h-[200px] rounded-lg min-[768px]:w-[280px] min-[768px]:row-span-4 mt-[32px] min-[768px]:mt-0"
+                  className="w-full object-cover h-[200px] rounded-lg md:w-[280px] md:row-span-4 mt-8 md:mt-0"
                   src={item.image}
                 />
-                <h3 className="font-medium text-2xl text-neutral-900 min-[768px]:col-start-2 min-[768px]:pt-[0] py-[16px]">
+                <h3 className="font-medium text-2xl text-neutral-900 md:col-start-2 md:pt-[0] py-[16px]">
                   {item.name}
                 </h3>
-                <div className="flex gap-[5px] font-medium text-neutral-600 min-[768px]:col-start-2">
+                <div className="flex gap-1 font-medium text-neutral-600 md:col-start-2">
                   <p>{capitalizeFirstLetter(item.color)}</p>
                   {item.size && <span>•</span>}
                   <p>{item.size}</p>
                 </div>
-                <p className="text-sm text-neutral-600 min-[768px]:col-start-2 py-[16px]">
+                <p className="text-sm text-neutral-600 md:col-start-2 py-[16px]">
                   {item.description}
                 </p>
-                <div className="flex min-[768px]:col-start-2">
+                <div className="flex md:col-start-2">
                   <Quantity
                     initialQuantity={item.quantity}
                     onQuantityChange={(newQuantity) =>
@@ -120,14 +120,14 @@ function Cart() {
                   <div className="flex justify-between items-center">
                     <button
                       onClick={() => handleRemoveFromCart(item)}
-                      className="pl-[18px] font-medium text-sm text-neutral-600"
+                      className="pl-4 font-medium text-sm text-neutral-600"
                     >
                       Remove
                     </button>
 
                     {typeof item.discount === "number" && item.discount > 0 && (
                       <span
-                        className={`font-medium text-lg text-neutral-900 ${item.discount && item.discount > 0 ? "min-[375px]:pl-[38px] min-[768px]:pl-[109px] min-[1440px]:pl-[205px]" : "pl-[55px]"}`}
+                        className={`font-medium text-lg text-neutral-900 ${item.discount && item.discount > 0 ? "min-[375px]:pl-10 md:pl-28 xl:pl-52" : "pl-14"}`}
                       >
                         $
                         {formatPrice(
@@ -136,7 +136,7 @@ function Cart() {
                       </span>
                     )}
                     <span
-                      className={`font-medium text-lg  ${item.discount && item.discount > 0 ? "text-xs line-through text-neutral-600 pl-[6px]" : "text-neutral-900 min-[375px]:pl-[90px] min-[768px]:pl-[172px] min-[1440px]:pl-[260px]"}`}
+                      className={`font-medium text-lg  ${item.discount && item.discount > 0 ? "text-xs line-through text-neutral-600 pl-1.5" : "text-neutral-900 min-[375px]:pl-[90px] md:pl-[172px] xl:pl-[260px]"}`}
                     >
                       ${formatPrice(item.price)}
                     </span>
@@ -145,7 +145,7 @@ function Cart() {
               </div>
             ))}
           </ul>
-          <div className="border border-solid border-neutral-200 rounded-lg py-[16px] px-[16px]  min-[768px]:p-[32px] min-[1440px]:mt-[32px]">
+          <div className="border border-solid border-neutral-200 rounded-lg py-[16px] px-[16px]  md:p-[32px] xl:mt-[32px]">
             <h2 className="font-semibold text-2xl text-neutral-900 pb-[32px]">
               Order Summary
             </h2>
@@ -238,7 +238,7 @@ function Cart() {
               </div>
             )}
 
-            <div className="flex justify-between pt-[26px] min-[768px]:py-[32px] border-t-[1px] border-dashed border-neutral-200 mt-[36px] min-[768px]:mt-[32px]">
+            <div className="flex justify-between pt-[26px] md:py-[32px] border-t-[1px] border-dashed border-neutral-200 mt-[36px] md:mt-[32px]">
               <p className="font-medium text-2xl text-neutral-900">Total</p>
               <span className="font-semibold text-4xl text-right text-neutral-900">
                 ${formatPrice(total)}
@@ -251,8 +251,8 @@ function Cart() {
         </>
       )}
       {items.length === 0 && (
-        <div className="flex flex-col min-[1440px]:flex-row gap-[32px] pt-[48px] min-[768px]:pt-[0]">
-          <div className="flex flex-col items-center pt-[105px] pb-[90px] min-[768px]:py-[104px] px-[42px] min-[1440px]:px-[126px] min-[1440px]:py-[120px]">
+        <div className="flex flex-col xl:flex-row gap-[32px] pt-[48px] md:pt-[0]">
+          <div className="flex flex-col items-center pt-[105px] pb-[90px] md:py-[104px] px-[42px] xl:px-[126px] xl:py-[120px]">
             <div className="w-12 h-12 bg-white rounded-full shadow-md flex content-center justify-center flex-wrap">
               <svg
                 width="21"
@@ -267,7 +267,7 @@ function Cart() {
                 />
               </svg>
             </div>
-            <h2 className="font-medium text-xl text-center text-neutral-900 pb-[8px] pt-[22px] min-[768px]:pt-[20px]">
+            <h2 className="font-medium text-xl text-center text-neutral-900 pb-[8px] pt-[22px] md:pt-[20px]">
               Your cart is empty
             </h2>
             <p className="text-neutral-900 pb-[18px]">
@@ -290,7 +290,7 @@ function Cart() {
             </Button>
           </div>
           <img
-            className="h-[180px] min-[768px]:h-[320px] w-[full] object-cover min-[1440px]:w-[696px] min-[1440px]:h-[432px]"
+            className="h-[180px] md:h-[320px] w-[full] object-cover xl:w-[696px] xl:h-[432px]"
             src={cartImg}
           />
         </div>

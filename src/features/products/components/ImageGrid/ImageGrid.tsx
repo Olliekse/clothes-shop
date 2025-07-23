@@ -27,19 +27,19 @@ function ImageGrid({ images, selectedColor }: ImageGridProps) {
   const thumbnailImages = filteredImages.slice(1, 5);
 
   return (
-    <div className="flex flex-col gap-[26px] min-[375px]:pt-[48px] min-[375px]:pb-[50px] min-[375px]:px-[16px] min-[768px]:pt-[64px] min-[1440px]:py-[96px] min-[1440px]:p-0">
+    <div className="flex flex-col gap-6 min-[375px]:pt-12 min-[375px]:pb-12 min-[375px]:px-4 md:pt-[64px] xl:py-[96px] xl:p-0">
       {mainImage && (
         <img
-          className="min-[375px]:h-[400px] min-[375px]:w-[311px] object-cover rounded-md min-[768px]:w-[704px] min-[768px]:h-[800px] min-[1440px]:h-[800px] min-[1440px]:w-[592px]"
+          className="min-[375px]:h-96 min-[375px]:w-80 object-cover rounded-md md:w-[704px] md:h-[800px] xl:h-[800px] xl:w-[592px]"
           src={mainImage}
           alt="Main product image"
         />
       )}
-      <div className="flex flex-row gap-[16px] overflow-scroll">
+      <div className="flex flex-row gap-4 overflow-scroll">
         {thumbnailImages.map((image, index) => (
           <img
             key={index}
-            className="cursor-pointer object-cover min-[375px]:h-[120px] rounded-md min-[768px]:h-[190px] flex-shrink-0 min-[768px]:w-[188px] min-[375px]:w-[80px] min-[1440px]:h-[190px] min-[1440px]:w-[160px]"
+            className="cursor-pointer object-cover min-[375px]:h-28 rounded-md md:h-48 flex-shrink-0 md:w-48 min-[375px]:w-20 xl:h-[190px] xl:w-[160px]"
             src={image.image_url}
             alt={`Product thumbnail ${index + 1}`}
             onClick={() => setMainImage(image.image_url)}

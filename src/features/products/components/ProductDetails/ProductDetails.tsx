@@ -195,10 +195,10 @@ function ProductDetails() {
   const defaultInventoryItem = product.inventory[0];
 
   return (
-    <div className="min-[375px]:w-[100%] min-[1440px]:w-[1280px] min-[1440px]:grid min-[1440px]:grid-cols-[592px_592px] min-[1440px]:px-[96px] min-[1440px]:gap-[32px]">
+    <div className="min-[375px]:w-[100%] xl:grid xl:grid-cols-[592px_592px] xl:px-[96px] xl:gap-[32px] bg-white">
       <ImageGrid images={product.images} selectedColor={selectedColor} />
-      <div className="min-[1440px]:py-[96px] min-[375px]:px-[16px] min-[1440px]:p-0">
-        <h1 className="font-semibold text-3xl text-neutral-900 pb-[20px] min-[768px]:text-font-semibold min-[768px]:text-5xl min-[1440px]:pt-[0]">
+      <div className="xl:py-[96px] min-[375px]:px-[16px]">
+        <h1 className="font-semibold text-3xl text-neutral-900 pb-[20px] md:text-font-semibold md:text-5xl xl:pt-[0]">
           {product.name}
         </h1>
         <Pricing
@@ -229,7 +229,7 @@ function ProductDetails() {
         />
         <Button
           onClick={handleAddToCart}
-          type="addToCartCheckout"
+          type="addToCart"
           disabled={isFullyOutOfStock}
         >
           Add to Cart

@@ -11,7 +11,7 @@ function Pricing({ price, discount = 0 }: PricingProps) {
 
   return (
     <>
-      <div className="flex gap-[8px] items-center">
+      <div className="flex gap-2 items-center">
         <p className="font-medium text-3xl text-neutral-600 mb-[8px]">
           ${discountedPrice}
         </p>
@@ -22,7 +22,7 @@ function Pricing({ price, discount = 0 }: PricingProps) {
         )}
       </div>
       {hasDiscount && (
-        <span className="text-sm text-amber-700 w-[77px] bg-amber-50 px-2.5 py-1 rounded-full border border-solid border-amber-200">
+        <span className="text-sm text-amber-700 w-20 bg-amber-50 px-2 py-1 rounded-full border border-solid border-amber-200">
           {discount}% OFF
         </span>
       )}

@@ -96,13 +96,13 @@ function Sizes({
       {allOutOfStock && (
         <div className="text-black pb-2">Sorry, this item is out of stock</div>
       )}
-      <div className="flex gap-[16px] flex-wrap">
+      <div className="flex gap-4 flex-wrap">
         {sortedSizes.map((size) => (
           <div
             key={size}
-            className={`w-16 flex justify-center items-center gap-1.5 px-5 py-[11.4px] rounded border border-solid border-neutral-200
+            className={`w-16 flex justify-center items-center gap-1.5 px-5 py-3 rounded border border-solid border-neutral-200
               ${isSizeOutOfStock(size) ? "bg-gray-200 text-gray-400 cursor-not-allowed" : "bg-white cursor-pointer"}
-              ${selectedSize === size ? "ring-[1.5px] ring-blue-500 ring-offset-1 relative" : "focus:ring-4 focus:ring-blue-100"}
+              ${selectedSize === size ? "ring-2 ring-blue-500 ring-offset-1 relative" : "focus:ring-4 focus:ring-blue-100"}
             `}
             onClick={() => !isSizeOutOfStock(size) && handleSizeClick(size)}
             aria-disabled={isSizeOutOfStock(size)}

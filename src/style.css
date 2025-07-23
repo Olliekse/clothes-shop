@@ -6,6 +6,7 @@
 /* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
 body {
   margin: 0;
+  background: linear-gradient(to right, #f9fafb, #d2d6db);
   font-family:
     "Noto Sans",
     system-ui,

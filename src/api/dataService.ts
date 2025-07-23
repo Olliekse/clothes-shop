@@ -1,6 +1,7 @@
 import { mockData } from "./mockData";
 import productReviews from "./product-reviews.json";
 import productInfo from "./product-info.json";
+import collections from "./collections.json";
 
 // Types
 export interface Product {
@@ -135,6 +136,10 @@ class DataService {
         .map((inv) => inv.color)
     );
     return Array.from(colors);
+  }
+
+  getCollections() {
+    return collections;
   }
 
   // Get available sizes for a product

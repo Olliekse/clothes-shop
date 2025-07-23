@@ -31,10 +31,10 @@ function ProductListItem({
   const defaultInventoryItem = inventoryItems[0];
 
   return (
-    <div className="mb-[32px]" key={product.product_id}>
+    <div className="mb-8" key={product.product_id}>
       <Link to={`/product/${product.product_id}`}>
         <img
-          className="cursor-pointer rounded-lg w-[319px] object-cover h-[300px] md:w-[336px] lg:w-[280px]"
+          className="cursor-pointer rounded-lg w-80 object-cover h-72 md:w-84 lg:w-72"
           src={productImage.image_url}
           alt={product.name}
         />
@@ -45,12 +45,12 @@ function ProductListItem({
           {capitalizeFirstLetter(defaultInventoryItem.color)}
         </p>
         <Link to={`/product/${product.product_id}`}>
-          <span className="cursor-pointer text-3xl min-[1440px]:font-medium min-[1440px]:text-lg">
+          <span className="cursor-pointer text-3xl xl:font-medium xl:text-lg">
             {product.name}
           </span>
         </Link>
         <div
-          className="flex items-center gap-[8px] mt-[12px]"
+          className="flex items-center gap-2 mt-3"
           aria-label="Price information"
         >
           <p className="text-lg text-neutral-500">

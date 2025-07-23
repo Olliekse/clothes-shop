@@ -43,7 +43,7 @@ function Quantity({
 
   return (
     <div>
-      <div className="relative h-[36px] px-[11px] justify-between w-[125px] flex items-center bg-neutral-50 p-0.5 rounded-md border border-solid border-neutral-200">
+      <div className="relative h-9 px-3 justify-between w-32 flex items-center bg-neutral-50 p-0.5 rounded-md border border-solid border-neutral-200">
         <button
           onClick={handleDecrement}
           disabled={disabled}
@@ -62,13 +62,13 @@ function Quantity({
           +
         </button>
         {showTooltip && (
-          <div className="z-1 absolute w-[123px] left-[45px] translate-y-[-81px] top-[50px]">
+          <div className="z-1 absolute w-32 left-12 -translate-y-20 top-12">
             <div className="relative">
               <div className="px-3 py-2 bg-neutral-950 text-white text-xs rounded-lg shadow">
                 Insufficient stock
               </div>
               <svg
-                className="absolute left-[55px] top-[30px]"
+                className="absolute left-14 top-8"
                 width="15"
                 height="9"
                 viewBox="0 0 15 9"

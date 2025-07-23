@@ -29,9 +29,7 @@ function Description({ productId }: DescriptionProps) {
     return (
       <div key={title}>
         <div className="flex flex-wrap justify-between">
-          <h3 className="font-medium text-lg text-neutral-900 pb-[8px]">
-            {title}
-          </h3>
+          <h3 className="font-medium text-lg text-neutral-900 pb-2">{title}</h3>
           <button
             onClick={() => toggleSection(title)}
             className="w-6 h-6 text-neutral-400 hover:text-neutral-600 transition-colors duration-200"
@@ -66,9 +64,9 @@ function Description({ productId }: DescriptionProps) {
           </button>
         </div>
         <div
-          className={`${title === "Shipping" ? "" : "border-b border-solid border-neutral-200 pb-[25px] mb-[32px]"} overflow-hidden transition-all duration-300 ease-in-out ${isCollapsed ? "max-h-0 opacity-0" : "max-h-96 opacity-100"}`}
+          className={`${title === "Shipping" ? "" : "border-b border-solid border-neutral-200 pb-6 mb-8"} overflow-hidden transition-all duration-300 ease-in-out ${isCollapsed ? "max-h-0 opacity-0" : "max-h-96 opacity-100"}`}
         >
-          <ul className="min-[1440px]:w-[544px] list-disc text-neutral-600 pl-6 min-[375px]:w-[263px] min-[768px]:w-full">
+          <ul className="xl:w-[544px] list-disc text-neutral-600 pl-6 min-[375px]:w-64 md:w-full">
             {items.map((item, index) => (
               <li key={index}>
                 <p>{item}</p>

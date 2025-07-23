@@ -73,8 +73,8 @@ function ProductList() {
     return <div>No data available</div>;
 
   return (
-    <div className="min-[375px]:px-[12px] min-[768px]:px-[16px] min-[375px]:py-[48px] min-[768px]:py-[64px] min-[1440px]:px-[96px] min-[1440px]:py-[104px]">
-      <div className="flex flex-row justify-between pb-[32px]">
+    <div className="sm:px-[12px] md:px-[16px] sm:py-[48px] md:py-[64px] xl:p-[96px] bg-white">
+      <div className="flex flex-row justify-between pb-[32px] items-center">
         <h1 className="font-semibold text-2xl text-neutral-900">
           Latest Arrivals
         </h1>
@@ -82,7 +82,7 @@ function ProductList() {
           View all
         </Button>
       </div>
-      <div className="flex flex-wrap justify-between">
+      <div className="flex flex-wrap md:gap-[32px] xl:grid xl:grid-cols-4">
         {filteredProducts.map((product) => {
           if (!Array.isArray(productImages)) {
             console.error("productImages is not an array:", productImages);
