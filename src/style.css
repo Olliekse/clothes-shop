@@ -29,6 +29,18 @@ body {
   }
 }
 
+@media (max-width: 375px) {
+  .newsletter-mobile-gap {
+    margin-top: 6px !important;
+  }
+  .newsletter-mobile-gap-none {
+    margin-top: 0 !important;
+  }
+  .newsletter-mobile-gap-16 {
+    margin-top: 16px !important;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

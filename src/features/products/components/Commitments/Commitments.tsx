@@ -1,6 +1,6 @@
 function Commitments() {
   return (
-    <div className="py-12 md:pt-16 px-3 flex flex-col items-center bg-white xl:pt-[96px]">
+    <div className="py-12 md:pt-16 px-3 flex flex-col items-center bg-white xl:pt-[96px] xl:pb-0">
       <div className="xl:w-[896px]">
         <p className="font-semibold text-center text-indigo-700 pb-3">
           Elevate Your Experience

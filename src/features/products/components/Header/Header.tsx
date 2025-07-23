@@ -1,6 +1,11 @@
 import React from "react";
+import { Link, NavLink } from "react-router";
+import { useCartStore } from "../../../../store/cartStore";
 
 function Header() {
+  const { items } = useCartStore();
+  const cartCount = items.length;
+
   return (
     <header className="flex justify-between py-[22px] md:px-[16px] md:pb-[34px] xl:px-[100px]">
       <div className="flex gap-1">
@@ -19,21 +24,64 @@ function Header() {
           />
         </svg>
 
-        <span className="font-bold text-neutral-900">StyleNest</span>
+        <span className="font-bold text-neutral-900 xl:pr-[103px]">
+          StyleNest
+        </span>
+        <div className="xl:flex xl:gap-[34px] hidden">
+          <NavLink
+            className="font-medium text-neutral-600 focus:outline-none
+              focus:ring-4
+              focus:ring-indigo-100
+              rounded-sm
+              p-1"
+            to=""
+          >
+            Shop all
+          </NavLink>
+          <NavLink
+            className="font-medium text-neutral-600 focus:outline-none
+              focus:ring-4
+              focus:ring-indigo-100
+              rounded-sm
+              p-1"
+            to=""
+          >
+            Latest arrivals
+          </NavLink>
+        </div>
       </div>
-      <div className="flex gap-[19px] items-center">
-        <svg
-          width="18"
-          height="20"
-          viewBox="0 0 18 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.50488 0H14.5049C14.8196 0 15.116 0.14819 15.3049 0.4L18.0049 4V19C18.0049 19.5523 17.5572 20 17.0049 20H1.00488C0.452603 20 0.00488281 19.5523 0.00488281 19V4L2.70488 0.4C2.89374 0.14819 3.19013 0 3.50488 0ZM16.0049 6H2.00488V18H16.0049V6ZM15.5049 4L14.0049 2H4.00488L2.50488 4H15.5049ZM6.00488 8V10C6.00488 11.6569 7.348 13 9.0049 13C10.6617 13 12.0049 11.6569 12.0049 10V8H14.0049V10C14.0049 12.7614 11.7663 15 9.0049 15C6.24346 15 4.00488 12.7614 4.00488 10V8H6.00488Z"
-            fill="#525252"
-          />
-        </svg>
+      <div className="flex gap-[19px] items-center relative">
+        <Link to="/cart">
+          <button
+            className="
+              focus:outline-none
+              focus:ring-4
+              focus:ring-indigo-100
+              rounded-sm
+              p-1
+              relative
+            "
+            aria-label="View cart"
+          >
+            <svg
+              width="18"
+              height="20"
+              viewBox="0 0 18 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.50488 0H14.5049C14.8196 0 15.116 0.14819 15.3049 0.4L18.0049 4V19C18.0049 19.5523 17.5572 20 17.0049 20H1.00488C0.452603 20 0.00488281 19.5523 0.00488281 19V4L2.70488 0.4C2.89374 0.14819 3.19013 0 3.50488 0ZM16.0049 6H2.00488V18H16.0049V6ZM15.5049 4L14.0049 2H4.00488L2.50488 4H15.5049ZM6.00488 8V10C6.00488 11.6569 7.348 13 9.0049 13C10.6617 13 12.0049 11.6569 12.0049 10V8H14.0049V10C14.0049 12.7614 11.7663 15 9.0049 15C6.24346 15 4.00488 12.7614 4.00488 10V8H6.00488Z"
+                fill="#525252"
+              />
+            </svg>
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-indigo-700 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+                {cartCount}
+              </span>
+            )}
+          </button>
+        </Link>
         <svg
           className="xl:hidden"
           width="16"

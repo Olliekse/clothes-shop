@@ -59,9 +59,10 @@ function Button({ type, children, disabled, onClick }: ButtonProps) {
   if (type === "Subscribe") {
     return (
       <button
-        className="w-full flex justify-center items-center gap-2 bg-indigo-700 px-6 py-3 rounded text-white md:py-4 font-medium text-md disabled:bg-neutral-100 disabled:text-neutral-400 mt-4 md:mt-0 md:text-sm xl:mb-[24px] md:w-[98px] xl:h-[40px]"
+        className="w-full flex justify-center items-center gap-2 bg-indigo-700 px-6 py-3 rounded text-white md:py-4 font-medium text-md disabled:bg-neutral-100 disabled:text-neutral-400 md:mt-0 md:text-sm xl:mb-[24px] md:w-[98px] md:h-[40px]"
         disabled={disabled}
         onClick={onClick}
+        type="submit"
       >
         {children}
       </button>
