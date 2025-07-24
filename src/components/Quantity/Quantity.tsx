@@ -47,7 +47,7 @@ function Quantity({
         <button
           onClick={handleDecrement}
           disabled={disabled}
-          className={`${disabled ? "text-neutral-300 cursor-not-allowed" : "text-neutral-900 hover:text-neutral-600"} transition-colors duration-200`}
+          className={`${disabled ? "text-neutral-300 cursor-not-allowed" : "text-neutral-900 hover:text-neutral-600"} transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-indigo-100 rounded-sm p-1`}
         >
           –
         </button>
@@ -57,7 +57,7 @@ function Quantity({
         <button
           onClick={handleIncrement}
           disabled={disabled}
-          className={`${disabled ? "text-neutral-300 cursor-not-allowed" : "text-neutral-900 hover:text-neutral-600"} transition-colors duration-200`}
+          className={`${disabled ? "text-neutral-300 cursor-not-allowed" : "text-neutral-900 hover:text-neutral-600"} transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-indigo-100 rounded-sm p-1`}
         >
           +
         </button>

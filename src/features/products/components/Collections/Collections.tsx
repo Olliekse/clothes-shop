@@ -27,13 +27,13 @@ function Collections() {
       <div className="flex flex-col md:flex-row gap-7">
         {/* Left big card */}
         <div className="flex-1 xl:w-[50%]">
-          <div className="relative rounded-lg overflow-hidden">
+          <div className="relative rounded-lg overflow-hidden group">
             <img
               src={leftCard.image_url}
               alt={leftCard.name}
               className="w-84 xl:w-full h-[580px] rounded-lg object-cover"
             />
-            <div className="absolute inset-0 bg-black/40 rounded-lg xl:w-full"></div>
+            <div className="absolute inset-0 bg-black/40 rounded-lg xl:w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-10">
               <h3 className="text-sm">{leftCard.name}</h3>
               <p className="font-medium text-lg">{leftCard.description}</p>
@@ -46,14 +46,14 @@ function Collections() {
           {rightCards.map((item) => (
             <div
               key={item.collection_id}
-              className="relative rounded-lg overflow-hidden h-[337px] md:h-[276px]"
+              className="relative rounded-lg overflow-hidden h-[337px] md:h-[276px] group"
             >
               <img
                 src={item.image_url}
                 alt={item.name}
                 className="w-full rounded-lg object-cover md:w-[338px] md:h-[276px] xl:w-full h-full"
               />
-              <div className="absolute inset-0 bg-black/40 rounded-lg md:h-[276px] md:w-[338px]  xl:w-full"></div>
+              <div className="absolute inset-0 bg-black/40 rounded-lg md:h-[276px] md:w-[338px] xl:w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-10">
                 <h3 className="text-sm">{item.name}</h3>
                 <p className="font-medium text-lg">{item.description}</p>

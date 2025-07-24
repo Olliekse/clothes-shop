@@ -31,7 +31,11 @@ function ProductListItem({
   const defaultInventoryItem = inventoryItems[0];
 
   return (
-    <div className="mb-8" key={product.product_id}>
+    <div
+      className="mb-8 hover:text-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-100 rounded-sm p-1"
+      key={product.product_id}
+      tabIndex={0}
+    >
       <Link to={`/product/${product.product_id}`}>
         <img
           className="cursor-pointer rounded-lg w-80 object-cover h-72 md:w-84 lg:w-72"
