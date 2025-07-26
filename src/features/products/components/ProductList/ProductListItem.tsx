@@ -38,6 +38,7 @@ function ProductListItem({
     >
       <Link to={`/product/${product.product_id}`}>
         <img
+          loading="lazy"
           className="cursor-pointer rounded-lg w-80 object-cover h-72 md:w-84 lg:w-72"
           src={productImage.image_url}
           alt={product.name}
