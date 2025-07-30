@@ -2,11 +2,14 @@ import Button from "../../components/Button";
 import Quantity from "../../components/Quantity";
 import { useCartStore } from "../../store/cartStore";
 import type { CartItem } from "../../store/cartStore";
+import OrderSummary from "../../components/OrderSummary/OrderSummary";
 
 import cartImg from "../../assets/images/cart.jpg";
 
-import { capitalizeFirstLetter } from "../products/utils/productHelpers";
-import { useRef, useState } from "react";
+import {
+  capitalizeFirstLetter,
+  formatPrice,
+} from "../products/utils/productHelpers";
 
 // const dummyData = [
 //   {
@@ -54,26 +57,6 @@ function Cart() {
   function handleQuantityChange(item: CartItem, newQuantity: number) {
     updateQuantity(item.product_id, item.color, item.size, newQuantity);
   }
-
-  function formatPrice(price: number): string {
-    return price % 1 === 0 ? price.toString() : price.toFixed(2);
-  }
-
-  const [couponShow, setCouponShow] = useState(false);
-  const [couponCode, setCouponCode] = useState("");
-
-  const subtotal = items.reduce((sum, item) => {
-    const itemPrice = item.price;
-    const discount = item.discount || 0;
-
-    const discountedPrice = itemPrice - (itemPrice * discount) / 100;
-    return sum + discountedPrice * item.quantity;
-  }, 0);
-
-  const coupon = couponCode ? 5 : 0;
-  const total = subtotal - coupon;
-
-  const couponField = useRef<HTMLInputElement>(null);
 
   return (
     <div
@@ -127,7 +110,7 @@ function Cart() {
 
                     {typeof item.discount === "number" && item.discount > 0 && (
                       <span
-                        className={`font-medium text-lg text-neutral-900 ${item.discount && item.discount > 0 ? "min-[375px]:pl-10 md:pl-28 xl:pl-52" : "pl-14"}`}
+                        className={`font-medium text-lg text-neutral-900 ${item.discount && item.discount > 0 ? "min-[375px]:pl-8 md:pl-28 xl:pl-52" : "pl-14"}`}
                       >
                         $
                         {formatPrice(
@@ -136,7 +119,7 @@ function Cart() {
                       </span>
                     )}
                     <span
-                      className={`font-medium text-lg  ${item.discount && item.discount > 0 ? "text-xs line-through text-neutral-600 pl-1.5" : "text-neutral-900 min-[375px]:pl-[90px] md:pl-[172px] xl:pl-[260px]"}`}
+                      className={`font-medium text-lg  ${item.discount && item.discount > 0 ? "text-xs line-through text-neutral-600 pl-1.5" : "text-neutral-900 min-[375px]:pl-[70px] md:pl-[172px] xl:pl-[260px]"}`}
                     >
                       ${formatPrice(item.price)}
                     </span>
@@ -145,109 +128,7 @@ function Cart() {
               </div>
             ))}
           </ul>
-          <div className="border border-solid border-neutral-200 rounded-lg py-[16px] px-[16px]  md:p-[32px] xl:mt-[32px]">
-            <h2 className="font-semibold text-2xl text-neutral-900 pb-[32px]">
-              Order Summary
-            </h2>
-            <div className="flex justify-between pb-[18px]">
-              <p className="text-neutral-600">Subtotal</p>
-              <span className="font-semibold text-lg text-neutral-900">
-                ${formatPrice(subtotal)}
-              </span>
-            </div>
-            <div className="flex justify-between">
-              <p className="text-neutral-600">Shipping</p>
-              <span className="font-semibold text-lg text-neutral-900">
-                FREE
-              </span>
-            </div>
-            {!couponShow ? (
-              <div className="flex justify-end items-center gap-[8px] pt-[16px]">
-                <svg
-                  width="18"
-                  height="16"
-                  viewBox="0 0 18 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.670776 5.91667V1.33333C0.670776 0.8731 1.04388 0.5 1.50411 0.5H16.5041C16.9644 0.5 17.3375 0.8731 17.3375 1.33333V5.91667C16.1869 5.91667 15.2541 6.84942 15.2541 8C15.2541 9.15058 16.1869 10.0833 17.3375 10.0833V14.6667C17.3375 15.1269 16.9644 15.5 16.5041 15.5H1.50411C1.04388 15.5 0.670776 15.1269 0.670776 14.6667V10.0833C1.82137 10.0833 2.75411 9.15058 2.75411 8C2.75411 6.84942 1.82137 5.91667 0.670776 5.91667ZM2.33744 4.6398C3.57221 5.25343 4.42078 6.52758 4.42078 8C4.42078 9.47242 3.57221 10.7466 2.33744 11.3602V13.8333H15.6708V11.3602C14.436 10.7466 13.5875 9.47242 13.5875 8C13.5875 6.52758 14.436 5.25343 15.6708 4.6398V2.16667H2.33744V4.6398ZM6.50411 5.5H11.5041V7.16667H6.50411V5.5ZM6.50411 8.83333H11.5041V10.5H6.50411V8.83333Z"
-                    fill="#4338CA"
-                  />
-                </svg>
-                <p
-                  onClick={() => setCouponShow(!couponShow)}
-                  className="font-medium text-indigo-700 "
-                >
-                  Add coupon code
-                </p>
-              </div>
-            ) : (
-              <div className="flex flex-col pt-[18px]">
-                <div className="flex flex-row justify-between">
-                  {couponCode && (
-                    <>
-                      <span className="text-sm text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-full border border-solid border-indigo-200">
-                        {couponCode}
-                      </span>
-                      <p>-$5.00</p>
-                    </>
-                  )}
-                </div>
-                <label className="pt-[16px] pb-[6px] text-neutral-700 text-sm font-medium">
-                  Coupon code
-                </label>
-                <div className="flex gap-[8px]">
-                  <input
-                    maxLength={11}
-                    ref={couponField}
-                    className="w-full items-center gap-2 self-stretch bg-neutral-50 px-3.5 py-2.5 rounded border border-solid border-neutral-200 flex-row justify-between placeholder:text-sm placeholder:text-neutral-500"
-                    type="text"
-                    placeholder="Enter coupon code"
-                  />
-                  <Button
-                    type="apply"
-                    onClick={() => {
-                      if (couponField.current) {
-                        setCouponCode(couponField.current.value);
-                        couponField.current.value = "";
-                      }
-                    }}
-                  >
-                    Apply
-                  </Button>
-                </div>
-                {couponCode && (
-                  <div className="flex items-center gap-[9px] bg-gray-200 px-[10px] py-1 rounded border-[0.5px] border-solid border-neutral-200 w-[144px] mt-[8px] text-sm">
-                    {couponCode}
-                    <svg
-                      onClick={() => setCouponCode("")}
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.00058 4.82208L10.1253 0.697266L11.3038 1.87577L7.17908 6.00058L11.3038 10.1253L10.1253 11.3038L6.00058 7.17908L1.87577 11.3038L0.697266 10.1253L4.82208 6.00058L0.697266 1.87577L1.87577 0.697266L6.00058 4.82208Z"
-                        fill="black"
-                      />
-                    </svg>
-                  </div>
-                )}
-              </div>
-            )}
-
-            <div className="flex justify-between pt-[26px] md:py-[32px] border-t-[1px] border-dashed border-neutral-200 mt-[36px] md:mt-[32px]">
-              <p className="font-medium text-2xl text-neutral-900">Total</p>
-              <span className="font-semibold text-4xl text-right text-neutral-900">
-                ${formatPrice(total)}
-              </span>
-            </div>
-            <Button type="Checkout" onClick={() => {}}>
-              Checkout
-            </Button>
-          </div>
+          <OrderSummary variant="cart" />
         </>
       )}
       {items.length === 0 && (

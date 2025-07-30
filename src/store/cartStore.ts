@@ -8,13 +8,16 @@ export type CartItem = {
   price: number;
   quantity: number;
   color: string;
-  size: string | number;
+  size: string;
   image: string;
   discount?: number;
 };
 
 type CartState = {
   items: CartItem[];
+  couponCode: string;
+  setCouponCode: (code: string) => void;
+  clearCouponCode: () => void;
   addToCart: (item: CartItem) => void;
   removeFromCart: (
     product_id: string,
@@ -35,6 +38,9 @@ export const useCartStore = create<CartState>()(
   devtools(
     (set) => ({
       items: [],
+      couponCode: "",
+      setCouponCode: (code) => set({ couponCode: code }),
+      clearCouponCode: () => set({ couponCode: "" }),
       addToCart: (item) => {
         set((state) => {
           if (!item || !item.product_id) {
@@ -113,6 +119,7 @@ export const useCartStore = create<CartState>()(
           ),
         })),
     }),
+
     {
       name: "cart-store",
     }
