@@ -40,7 +40,7 @@ interface Product {
   }>;
 }
 
-function ProductDetails() {
+function ProductDetailsSection() {
   const { id } = useParams();
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
@@ -195,7 +195,7 @@ function ProductDetails() {
   const defaultInventoryItem = product.inventory[0];
 
   return (
-    <div className="min-[375px]:w-[100%] xl:grid xl:grid-cols-[592px_592px] xl:px-[96px] xl:gap-[32px] bg-white">
+    <div className="w-full xl:grid xl:grid-cols-[592px_592px] xl:px-[96px] xl:gap-[32px] bg-white">
       <ImageGrid images={product.images} selectedColor={selectedColor} />
       <div className="xl:py-[96px] min-[375px]:px-[16px]">
         <h1 className="font-semibold text-3xl text-neutral-900 pb-[20px] md:text-font-semibold md:text-5xl xl:pt-[0]">
@@ -205,7 +205,11 @@ function ProductDetails() {
           price={defaultInventoryItem.list_price}
           discount={defaultInventoryItem.discount_percentage || 0}
         />
-        <StarRating rating={productRating} reviewCount={productReviewCount} />
+        <StarRating
+          rating={productRating}
+          reviewCount={productReviewCount}
+          productId={product.product_id}
+        />
         <p className="text-neutral-600 pb-[32px]">{product.description}</p>
         <ColorPicker
           colors={productColors}
@@ -240,4 +244,4 @@ function ProductDetails() {
   );
 }
 
-export default ProductDetails;
+export default ProductDetailsSection;

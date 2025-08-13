@@ -1,17 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import blackDesktop from "/src/assets/images/black-desktop.jpg";
-import blackTablet from "/src/assets/images/black-tablet.jpg";
-import blackMobile from "/src/assets/images/black-mobile.jpg";
 import chairDesktop from "/src/assets/images/chair-desktop.jpg";
-import chairTablet from "/src/assets/images/chair-tablet.jpg";
-import chairMobile from "/src/assets/images/chair-mobile.jpg";
 import yellowDesktop from "/src/assets/images/yellow-desktop.jpg";
-import yellowTablet from "/src/assets/images/yellow-tablet.jpg";
-import yellowMobile from "/src/assets/images/yellow-mobile.jpg";
 import clothesDesktop from "/src/assets/images/clothes-desktop.jpg";
-import clothesTablet from "/src/assets/images/clothes-tablet.jpg";
-import clothesMobile from "/src/assets/images/clothes-mobile.jpg";
 
 const specs = [
   {
@@ -333,17 +325,17 @@ const specs = [
 function ProductSpecification() {
   const [activeTab, setActiveTab] = useState(1);
 
-  const handleTabClick = (id) => {
+  const handleTabClick = (id: number) => {
     setActiveTab(id);
   };
 
   return (
-    <div className="xl:p-[96px] bg-white">
+    <div className="p-6 sm:p-8 md:p-12 lg:p-16 xl:p-24 2xl:p-[96px] bg-white">
       <div className="">
-        <h2 className="md:text-5xl font-semibold text-neutral-900">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-900 leading-tight">
           Discover timeless elegance
         </h2>
-        <p className="mt-6 text-lg text-neutral-600 mb-10">
+        <p className="mt-4 sm:mt-6 text-base sm:text-lg text-neutral-600 mb-6 sm:mb-8 md:mb-10 leading-relaxed">
           Step into a world where quality meets quintessential charm with our
           collection. Every thread weaves a promise of unparalleled quality,
           ensuring that each garment is not just a part of your wardrobe, but a
@@ -354,13 +346,16 @@ function ProductSpecification() {
       </div>
       <div>
         <nav>
-          <ul className="flex gap-6 mb-8 border-b border-solid border-neutral-200 pb-2">
+          <ul className="flex gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 border-b border-solid border-neutral-200 pb-2 overflow-x-auto">
             {specs.map((spec, index) => (
               <li
                 key={spec.id}
-                className={`px-2 pb-3 ${activeTab === index ? "border-b border-solid border-indigo-700 mb-[-9px] text-indigo-700" : ""}`}
+                className={`px-2 pb-3 whitespace-nowrap ${activeTab === index ? "border-b border-solid border-indigo-700 mb-[-9px] text-indigo-700" : ""}`}
               >
-                <button onClick={() => handleTabClick(index)}>
+                <button
+                  onClick={() => handleTabClick(index)}
+                  className="text-sm sm:text-base font-medium hover:text-indigo-600 transition-colors"
+                >
                   {spec.feature}
                 </button>
               </li>
@@ -369,29 +364,32 @@ function ProductSpecification() {
         </nav>
       </div>
 
-      <div className="flex flex-row gap-8">
+      <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
         <img
           src={`${specs[activeTab].image}`}
           alt={`${specs[activeTab].image}`}
-          className="w-full xl:w-[367px] xl:h-[256px] object-cover md:w-1/2 rounded-xl"
+          className="w-full h-48 sm:h-56 md:h-64 lg:w-[367px] lg:h-[256px] object-cover rounded-xl"
         />
-        <div className="flex flex-col w-full gap-8">
+        <div className="flex flex-col w-full gap-6 sm:gap-8">
           <div className="">
-            <h3 className="text-2xl font-medium text-neutral-900 pb-2">
+            <h3 className="text-xl sm:text-2xl font-medium text-neutral-900 pb-2 leading-tight">
               {specs[activeTab].title}
             </h3>
-            <p className="text-base text-neutral-600">
+            <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
               {specs[activeTab].description}
             </p>
           </div>
           <div className="flex flex-row flex-wrap text-sm">
-            <ul className="grid gap-4 pb-1 md:grid-cols-2 md:pb-0 md:w-fit xl:gap-8 md:gap-x-12 md:gap-y-8">
+            <ul className="grid gap-3 sm:gap-4 md:gap-6 lg:gap-8 pb-1 md:grid-cols-2 md:pb-0 md:w-fit">
               {specs[activeTab].points.map((point) => (
-                <li className="flex gap-4 items-center w-[259px] md:w-[320px] xl:w-[282px]">
-                  <div className="w-12 h-12 bg-white rounded-full shadow-md flex justify-center items-center">
+                <li
+                  key={point.label}
+                  className="flex gap-3 sm:gap-4 items-center w-full sm:w-[259px] md:w-[320px] xl:w-[282px]"
+                >
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-md flex justify-center items-center flex-shrink-0">
                     {point.icon}
                   </div>
-                  <p>{point.label}</p>
+                  <p className="text-sm sm:text-base">{point.label}</p>
                 </li>
               ))}
             </ul>
@@ -402,4 +400,4 @@ function ProductSpecification() {
   );
 }
 
-export default ProductSpecification;
+export default React.memo(ProductSpecification);

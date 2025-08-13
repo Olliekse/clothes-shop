@@ -10,7 +10,7 @@ export type CartItem = {
   color: string;
   size: string;
   image: string;
-  discount?: number;
+  discount: number;
 };
 
 type CartState = {
@@ -87,18 +87,15 @@ export const useCartStore = create<CartState>()(
       clearCart: () => set({ items: [] }),
       initializeFromStorage: () => {
         const stored = localStorage.getItem("cart");
-        console.log("Initializing from storage, stored:", stored);
+
         if (stored) {
           const parsedItems = JSON.parse(stored);
-          console.log("Parsed items:", parsedItems);
-          set((state) => {
-            console.log("Current state items length:", state.items.length);
 
+          set((state) => {
             if (state.items.length === 0) {
-              console.log("Setting items from storage");
               return { items: parsedItems };
             }
-            console.log("Cart not empty, not initializing");
+
             return state;
           });
         }

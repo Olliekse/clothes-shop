@@ -63,7 +63,7 @@ function Newsletter() {
               error ? "newsletter-mobile-gap" : "newsletter-mobile-gap-16"
             }`}
           >
-            <Button onClick={() => {}} type="Subscribe">
+            <Button onClick={() => {}} type="subscribe">
               Subscribe
             </Button>
           </div>

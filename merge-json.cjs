@@ -21,4 +21,3 @@ sources.forEach(({ key, file }) => {
 });
 
 fs.writeFileSync("db.json", JSON.stringify(db, null, 2));
-console.log("db.json created!");

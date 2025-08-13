@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { capitalizeFirstLetter } from "../../utils/productHelpers";
 import { Link } from "react-router";
 import ColorPicker from "../../../../components/ColorPicker";
+import OptimizedImage from "../../../../components/OptimizedImage";
 import { dataService, InventoryItem } from "../../../../api/dataService";
 
 interface Product {
@@ -37,7 +38,7 @@ function ProductListItem({
       tabIndex={0}
     >
       <Link to={`/product/${product.product_id}`}>
-        <img
+        <OptimizedImage
           loading="lazy"
           className="cursor-pointer rounded-lg w-80 object-cover h-72 md:w-84 lg:w-72"
           src={productImage.image_url}
@@ -86,4 +87,4 @@ function ProductListItem({
   );
 }
 
-export default ProductListItem;
+export default React.memo(ProductListItem);

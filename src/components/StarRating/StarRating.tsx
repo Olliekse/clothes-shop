@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
+import Reviews from "../../features/reviews/reviews";
 
 interface StarRatingProps {
   rating?: number;
   maxStars?: number;
   reviewCount?: number;
+  productId?: string;
+  type?: string;
 }
 
 function StarRating({
   rating = 0,
   maxStars = 5,
   reviewCount = 0,
+  productId,
+  type = "productDetails",
 }: StarRatingProps) {
   const validRating = Math.min(Math.max(rating || 0, 0), maxStars);
+  const [reviewsShow, setReviewsShow] = useState(false);
+
+  const handleClick = () => {
+    setReviewsShow(true);
+  };
 
   const stars = Array.from({ length: maxStars }, (_, index) => {
     const starValue = index + 1;
@@ -57,18 +67,37 @@ function StarRating({
   });
 
   return (
-    <div className="flex items-center gap-[8px] pt-[16px] pb-[34px]">
-      <span className="text-xl text-neutral-900">{validRating.toFixed(1)}</span>
+    <div
+      className={`flex items-center gap-[8px] ${type === "productDetail" ? "pt-[16px] pb-[34px]" : "pb-[15px] pt-[4.5px]"}`}
+    >
+    {type !== "reviews" && (<span className="font-semibold text-base text-neutral-900">{validRating.toFixed(1)}</span>)}
+
       <div className="flex gap-[5px]">{stars}</div>
-      {reviewCount > 0 && (
-        <Link to="" className="font-medium text-sm text-indigo-700">
+      {reviewCount > 0 && type === "productDetails" && (
+        <button
+          onClick={handleClick}
+          className="font-medium text-sm text-indigo-700"
+        >
           See all {reviewCount} reviews
-        </Link>
+        </button>
       )}
-      {reviewCount === 0 && (
-        <span>
-          "No reviews yet. <Link to="">Be the first</Link>"
+      {type === "reviews-overall" && (
+        <span className="text-sm text-neutral-600">
+          Based on {reviewCount} reviews
         </span>
+      )}
+      {reviewCount === 0 && type === "productDetails" && (
+        <span className="cursor-pointer" onClick={() => setReviewsShow(!reviewsShow)}>
+          No reviews yet. Be the first
+        </span>
+      )}
+      {reviewsShow && (
+        <Reviews
+          productId={productId}
+          rating={rating}
+          reviewCount={reviewCount}
+          setReviewsShow={setReviewsShow}
+        />
       )}
     </div>
   );

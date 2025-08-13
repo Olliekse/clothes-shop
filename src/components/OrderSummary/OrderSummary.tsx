@@ -198,7 +198,7 @@ function OrderSummary({ variant }: OrderSummaryProps) {
             ${formatPrice(total)}
           </span>
         </div>
-        <Button type="Checkout" onClick={handleClick}>
+        <Button type="checkout" onClick={handleClick}>
           {variant === "checkout" && (
             <svg
               width="13"

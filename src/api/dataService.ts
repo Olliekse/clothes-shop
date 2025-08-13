@@ -2,6 +2,7 @@ import { mockData } from "./mockData";
 import productReviews from "./product-reviews.json";
 import productInfo from "./product-info.json";
 import collections from "./collections.json";
+import users from "./users.json";
 
 // Types
 export interface Product {
@@ -169,6 +170,10 @@ class DataService {
   // Get review count for a product
   getProductReviewCount(productId: string): number {
     return this.getProductReviews(productId).length;
+  }
+
+  getUsers(userId: string) {
+    return users.find(user => user.user_id === userId)
   }
 
   // Get product info (Features, Fabric & Care, Shipping) for a specific product

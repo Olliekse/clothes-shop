@@ -20,6 +20,9 @@ function Hero() {
         <img
           className="object-cover py-12 md:pt-8 md:w-full xl:pb-[96px] xl:pt-0"
           src={heroImage}
+          alt="Summer collection hero"
+          loading="eager"
+          decoding="async"
         />
       </div>
     </div>
