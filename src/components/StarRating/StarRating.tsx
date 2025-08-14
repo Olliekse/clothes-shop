@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+
 import Reviews from "../../features/reviews/reviews";
 
 interface StarRatingProps {
@@ -98,7 +98,7 @@ function StarRating({
           No reviews yet. Be the first
         </span>
       )}
-      {reviewsShow && (
+      {reviewsShow && productId && (
         <Reviews
           productId={productId}
           rating={rating}

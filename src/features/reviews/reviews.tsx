@@ -187,8 +187,8 @@ function Reviews({
             </div>
           </div>
 
-          <div className="w-full lg:w-[560px] flex flex-col justify-center align-center mt-10 lg:mt-0 lg:overflow-y-auto">
-            <div className="space-y-4">
+          <div className="w-full lg:w-[560px] flex flex-col mt-10 lg:mt-0 lg:overflow-y-auto">
+            <div className="space-y-4 pt-4 lg:px-4">
               {filteredReviews.length === 0 ? (
                 <div className="flex flex-col items-center">
                   <div className="w-12 h-12 bg-white rounded-full shadow-md flex justify-center items-center mb-5">
@@ -217,11 +217,13 @@ function Reviews({
                   <div key={`${review.user_id}-${review.created_at}`}>
                     <div className="flex items-center gap-2 mb-2 justify-between">
                       <div className="flex gap-4">
-                        {dataService.getUsers(review.user_id)?.avatar_url ? (
+                        {dataService.getUsers(review.user_id)?.avatar_url &&
+                        dataService.getUsers(review.user_id)?.avatar_url !==
+                          null ? (
                           <img
                             className="h-12 w-12 rounded-full object-cover"
                             src={
-                              dataService.getUsers(review.user_id)?.avatar_url
+                              dataService.getUsers(review.user_id)?.avatar_url!
                             }
                           />
                         ) : (

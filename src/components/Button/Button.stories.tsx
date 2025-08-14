@@ -20,7 +20,7 @@ export const ViewAll: Story = {
 
 export const AddToCart: Story = {
   args: {
-    type: "addToCartCheckout",
+    type: "addToCart",
     children: "Add to Cart",
     onClick: () => alert("Add to Cart clicked"),
   },
