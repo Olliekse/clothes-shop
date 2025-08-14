@@ -96,7 +96,7 @@ function Reviews({
 
   return (
     <div className="fixed inset-0 z-50 bg-gray-900/80 flex items-center justify-center lg:p-4 px-4 py-20">
-      <div className="bg-white rounded-lg shadow-xl lg:w-[1040px] lg:h-[608px] w-[343px] md:w-[522px] max-h-[80vh] flex flex-col relative pb-4">
+      <div className="bg-white rounded-lg shadow-xl lg:w-[1040px] lg:h-[608px] w-[343px] md:w-[522px] max-h-[80vh] flex flex-col relative">
         <div
           className="absolute top-6 right-6 cursor-pointer focus:outline-none focus:ring-4 focus:ring-indigo-100 rounded-sm p-1"
           onClick={() => setReviewsShow(false)}
@@ -122,8 +122,8 @@ function Reviews({
             />
           </svg>
         </div>
-        <div className="flex flex-col px-6 lg:px-8 pt-[72px] lg:pb-4 lg:flex-row flex-1 overflow-y-auto lg:overflow-y-hidden lg:justify-between">
-          <div className="flex-shrink-0 w-full lg:w-[320px]">
+        <div className="flex flex-col pl-4 pr-3 lg:px-8 pt-[72px] lg:pb-4 lg:flex-row flex-1 overflow-y-auto lg:overflow-y-hidden lg:justify-between">
+          <div className="flex-shrink-0 w-full lg:w-[320px] pl-2">
             <h1 className="font-semibold text-xl text-neutral-900">
               Overall Rating
             </h1>
@@ -146,7 +146,7 @@ function Reviews({
                   >
                     <button
                       onClick={() => handleFilterClick(rating)}
-                      className={`font-medium text-base focus:outline-none focus:ring-4 focus:ring-indigo-100 text-left transition-colors ${
+                      className={`font-medium text-base focus:outline-none focus:ring-4 focus:ring-indigo-100 text-left transition-colors hover:text-neutral-900  ${
                         isActive
                           ? "text-indigo-600 font-semibold"
                           : "text-neutral-600 hover:text-neutral-900"
@@ -170,17 +170,17 @@ function Reviews({
               })}
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center h-[48px] w-[320px] lg:w-[295px] justify-self-center">
               {activeFilter !== null && (
                 <button
                   onClick={clearFilter}
-                  className="font-medium text-sm flex justify-center items-center gap-1.5 px-4 py-2 rounded  w-[50%] text-indigo-700 transition-colors focus:outline-none focus:ring-4 focus:ring-indigo-100"
+                  className="font-medium text-sm flex justify-center items-center px-4 py-2 rounded w-[148px] lg:w-[140px] text-indigo-700 transition-colors focus:outline-none focus:ring-4 focus:ring-indigo-100"
                 >
                   Clear filter
                 </button>
               )}
               <button
-                className={`${activeFilter !== null ? "w-[50%]" : "w-full"} font-medium text-base text-neutral-900 flex justify-center items-center justify-self-center gap-1.5 bg-white px-5 py-3 border-[0.5px] border-solid border-neutral-200 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-4 focus:ring-indigo-100 rounded-sm p-1`}
+                className={`${activeFilter !== null ? "w-[148px] lg:w-[140px]" : "w-full lg:w-[295px]"} font-medium text-base text-neutral-900 flex justify-center items-center bg-white py-3 border-[0.5px] border-solid border-neutral-200 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-4 focus:ring-indigo-100 rounded-sm p-1`}
               >
                 Write a review
               </button>
@@ -188,23 +188,6 @@ function Reviews({
           </div>
 
           <div className="w-full lg:w-[560px] flex flex-col justify-center align-center mt-10 lg:mt-0 lg:overflow-y-auto">
-            {activeFilter !== null && (
-              <div className="mb-4 p-3 bg-indigo-50 border border-indigo-200 rounded-lg">
-                <p className="text-sm text-indigo-700">
-                  Showing {filteredReviews.length} review
-                  {filteredReviews.length !== 1 ? "s" : ""} with{" "}
-                  {activeFilter === 5
-                    ? "5 stars"
-                    : activeFilter === 4
-                      ? "4 stars"
-                      : activeFilter === 3
-                        ? "3 stars"
-                        : activeFilter === 2
-                          ? "2 stars"
-                          : "1 star"}
-                </p>
-              </div>
-            )}
             <div className="space-y-4">
               {filteredReviews.length === 0 ? (
                 <div className="flex flex-col items-center">
@@ -269,7 +252,7 @@ function Reviews({
                           />
                         </div>
                       </div>
-                      <span className="text-sm text-gray-500 self-start">
+                      <span className="text-xs text-neutral-600 self-start">
                         {formatDate(review.created_at)}
                       </span>
                     </div>

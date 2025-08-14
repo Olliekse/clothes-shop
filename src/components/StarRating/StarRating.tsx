@@ -68,11 +68,15 @@ function StarRating({
 
   return (
     <div
-      className={`flex items-center gap-[8px] ${type === "productDetail" ? "pt-[16px] pb-[34px]" : "pb-[15px] pt-[4.5px]"}`}
+      className={`flex items-center gap-[9px] ${type === "productDetail" ? "pt-[16px] pb-[34px]" : "pb-[15px] pt-[8px]"}`}
     >
-    {type !== "reviews" && (<span className="font-semibold text-base text-neutral-900">{validRating.toFixed(1)}</span>)}
+      {type !== "reviews" && (
+        <span className="font-semibold text-base text-neutral-900">
+          {validRating.toFixed(1)}
+        </span>
+      )}
 
-      <div className="flex gap-[5px]">{stars}</div>
+      <div className="flex gap-[8px]">{stars}</div>
       {reviewCount > 0 && type === "productDetails" && (
         <button
           onClick={handleClick}
@@ -87,7 +91,10 @@ function StarRating({
         </span>
       )}
       {reviewCount === 0 && type === "productDetails" && (
-        <span className="cursor-pointer" onClick={() => setReviewsShow(!reviewsShow)}>
+        <span
+          className="cursor-pointer"
+          onClick={() => setReviewsShow(!reviewsShow)}
+        >
           No reviews yet. Be the first
         </span>
       )}
