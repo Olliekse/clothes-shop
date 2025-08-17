@@ -7,6 +7,9 @@ interface ColorPickerProps {
   inventoryItems?: { color: string; stock: number }[];
   size?: "sm" | "lg";
   gap?: "sm" | "lg";
+  hideHeading?: boolean;
+  multiSelect?: boolean;
+  selectedColors?: string[];
 }
 
 const TickIcon = React.memo(
@@ -137,6 +140,9 @@ function ColorPicker({
   inventoryItems = [],
   size = "sm",
   gap = "lg",
+  hideHeading = false,
+  multiSelect = false,
+  selectedColors = [],
 }: ColorPickerProps) {
   const stockMap = useMemo(() => {
     const map = new Map<string, number[]>();
@@ -149,11 +155,13 @@ function ColorPicker({
 
   return (
     <>
-      <p className="text-sm text-neutral-500 pb-[25px] md:pb-[26px]">
-        Available Colors
-      </p>
+      {!hideHeading && (
+        <p className="text-sm text-neutral-500 pb-[25px] md:pb-[26px]">
+          Available Colors
+        </p>
+      )}
       <div
-        className={`${gapClasses[gap]} flex pb-[41px] xl:pl-[10px] md:pl-[10px] pl-[8px]`}
+        className={`${gapClasses[gap]} flex flex-wrap pb-[41px] pt-1 xl:pl-[10px] md:pl-[10px] pl-[8px]`}
         role="group"
         aria-label="Color selection"
       >
@@ -162,11 +170,15 @@ function ColorPicker({
           const outOfStock =
             stockArray.length > 0 && stockArray.every((s) => s === 0);
 
+          const isSelected = multiSelect
+            ? selectedColors.includes(color)
+            : selectedColor === color;
+
           return (
             <ColorButton
               key={color}
               color={color}
-              selected={selectedColor === color}
+              selected={isSelected}
               outOfStock={outOfStock}
               size={size}
               onSelect={onColorSelect}

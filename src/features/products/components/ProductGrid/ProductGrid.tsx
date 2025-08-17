@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { mockData } from "../../../../api/mockData";
-import ProductListItem from "./ProductListItem";
+import ProductGridItem from "./ProductGridItem";
 import Button from "../../../../components/Button";
 import { dataService, InventoryItem } from "../../../../api/dataService";
 import React, { useMemo, useCallback, useEffect } from "react";
 import { queryClient } from "../../../../lib/queryClient";
+import { useNavigate } from "react-router";
 
 interface Product {
   product_id: string;
@@ -21,21 +22,42 @@ interface ProductsResponse {
   products: Product[];
 }
 
-function ProductList() {
-  const { data: productsData, isLoading: productsLoading } =
-    useQuery<ProductsResponse>({
-      queryKey: ["products"],
-      queryFn: async () => {
-        if (import.meta.env.PROD) {
-          return { products: mockData.products };
-        }
-        const response = await fetch("http://localhost:9000/products");
-        const data = await response.json();
-        return data;
-      },
-      // Keep this data fresh for longer since it rarely changes
-      staleTime: 10 * 60 * 1000, // 10 minutes
-    });
+interface ProductGridProps {
+  title?: string;
+  showViewAllButton?: boolean;
+  maxProducts?: number;
+  className?: string;
+  products: [];
+  type?: string;
+}
+
+function ProductGrid({
+  title,
+  showViewAllButton = true,
+  maxProducts = 8,
+  className = "",
+  products,
+  type,
+}: ProductGridProps) {
+  const { isLoading: productsLoading } = useQuery<ProductsResponse>({
+    queryKey: ["products"],
+    queryFn: async () => {
+      if (import.meta.env.PROD) {
+        return { products: mockData.products };
+      }
+      const response = await fetch("http://localhost:9000/products");
+      const data = await response.json();
+      return data;
+    },
+
+    staleTime: 10 * 60 * 1000,
+  });
+
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/products");
+  }
 
   const { data: productImages, isLoading: imagesLoading } = useQuery<
     ProductImage[]
@@ -49,8 +71,8 @@ function ProductList() {
       const data = await response.json();
       return data;
     },
-    // Keep image data fresh for longer
-    staleTime: 15 * 60 * 1000, // 15 minutes
+
+    staleTime: 15 * 60 * 1000,
   });
 
   const { data: inventoryData, isLoading: inventoryLoading } = useQuery<
@@ -65,13 +87,11 @@ function ProductList() {
       const data = await response.json();
       return data;
     },
-    staleTime: 5 * 60 * 1000, // 5 minutes
+    staleTime: 5 * 60 * 1000,
   });
 
-  // Prefetch data when component mounts to improve navigation performance
   useEffect(() => {
     const prefetchData = async () => {
-      // Prefetch related data that might be needed on other pages
       await Promise.all([
         queryClient.prefetchQuery({
           queryKey: ["products"],
@@ -103,13 +123,11 @@ function ProductList() {
     prefetchData();
   }, []);
 
-  // Memoize filtered products to prevent unnecessary recalculations
   const filteredProducts = useMemo(() => {
-    if (!productsData?.products) return [];
-    return productsData.products.filter((_, index) => index < 8);
-  }, [productsData]);
+    if (!products) return [];
+    return products.filter((_, index) => index < maxProducts);
+  }, [products, maxProducts]);
 
-  // Memoize the product rendering function to prevent unnecessary re-renders
   const renderProduct = useCallback(
     (product: Product) => {
       if (!Array.isArray(productImages)) {
@@ -127,11 +145,12 @@ function ProductList() {
       if (!productImage || !inventoryItems.length) return null;
 
       return (
-        <ProductListItem
+        <ProductGridItem
           key={product.product_id}
           product={product}
           productImage={productImage}
           inventoryItems={inventoryItems}
+          showViewAllButton={true}
         />
       );
     },
@@ -140,24 +159,30 @@ function ProductList() {
 
   if (productsLoading || imagesLoading || inventoryLoading)
     return <div>Loading...</div>;
-  if (!productsData?.products || !productImages || !inventoryData)
+  if (!products || !productImages || !inventoryData)
     return <div>No data available</div>;
 
   return (
-    <div className="sm:px-[12px] md:px-[16px] sm:py-[48px] md:py-[64px] xl:p-[96px] bg-white">
-      <div className="flex flex-row justify-between pb-[32px] items-center">
-        <h1 className="font-semibold text-2xl text-neutral-900">
-          Latest Arrivals
-        </h1>
-        <Button onClick={() => {}} type="viewAll">
-          View all
-        </Button>
-      </div>
-      <div className="flex flex-wrap md:gap-[32px] xl:grid xl:grid-cols-4">
+    <div
+      className={`${type === "productsPage" ? "lg:py-8" : "sm:px-[12px] md:px-[16px] sm:py-[48px] md:py-[64px] xl:p-[96px]"}  bg-white ${showViewAllButton ? "px-3" : "px-0"} ${className}`}
+    >
+      {(title || showViewAllButton) && (
+        <div className="flex flex-row justify-between pb-[32px] items-center">
+          {title && (
+            <h1 className="font-semibold text-2xl text-neutral-900">{title}</h1>
+          )}
+          {showViewAllButton && (
+            <Button onClick={handleClick} type="viewAll">
+              View all
+            </Button>
+          )}
+        </div>
+      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
         {filteredProducts.map(renderProduct)}
       </div>
     </div>
   );
 }
 
-export default React.memo(ProductList);
+export default React.memo(ProductGrid);

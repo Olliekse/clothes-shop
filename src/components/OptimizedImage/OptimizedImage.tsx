@@ -24,7 +24,6 @@ function OptimizedImage({
   const imgRef = useRef<HTMLImageElement>(null);
   const preloadImgRef = useRef<HTMLImageElement | null>(null);
 
-  // Preload critical images
   useEffect(() => {
     if (priority && src) {
       preloadImgRef.current = new Image();
@@ -43,7 +42,6 @@ function OptimizedImage({
       img.src = src;
     }
 
-    // Cleanup function to prevent memory leaks
     return () => {
       if (preloadImgRef.current) {
         preloadImgRef.current.onload = null;
@@ -61,7 +59,6 @@ function OptimizedImage({
     setImageError(true);
   };
 
-  // Reset state when src changes
   useEffect(() => {
     setImageLoaded(false);
     setImageError(false);

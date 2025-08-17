@@ -3,7 +3,7 @@ import Commitments from "../components/Commitments/Commitments";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
 import Newsletter from "../components/Newsletter/Newsletter";
-import { ProductList } from "../components/ProductList";
+import { ProductGrid } from "../components/ProductGrid";
 import Footer from "../components/Footer/Footer";
 
 function Storefront() {
@@ -11,7 +11,11 @@ function Storefront() {
     <>
       <Header />
       <Hero />
-      <ProductList />
+      <ProductGrid
+        title="Latest Arrivals"
+        showViewAllButton={true}
+        maxProducts={8}
+      />
       <Collections />
       <Commitments />
       <Newsletter />

@@ -16,14 +16,16 @@ interface ProductImage {
   image_url: string;
 }
 
-function ProductListItem({
+function ProductGridItem({
   product,
   productImage,
   inventoryItems,
+  showViewAllButton
 }: {
   product: Product;
   productImage: ProductImage;
   inventoryItems: InventoryItem[];
+  showViewAllButton: boolean;
 }) {
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
 
@@ -33,14 +35,14 @@ function ProductListItem({
 
   return (
     <div
-      className="mb-8 hover:text-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-100 rounded-sm p-1"
+      className={`${!showViewAllButton ? "mb-8" : "mb-0 px-0"} hover:text-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-100 rounded-sm p-1`}
       key={product.product_id}
       tabIndex={0}
     >
-      <Link to={`/product/${product.product_id}`}>
+      <Link to={`/products/${product.product_id}`}>
         <OptimizedImage
           loading="lazy"
-          className="cursor-pointer rounded-lg w-80 object-cover h-72 md:w-84 lg:w-72"
+          className="cursor-pointer rounded-lg w-full object-cover h-[225px] md:w-84 lg:w-72"
           src={productImage.image_url}
           alt={product.name}
         />
@@ -50,7 +52,7 @@ function ProductListItem({
         <p className="text-sm text-neutral-600">
           {capitalizeFirstLetter(defaultInventoryItem.color)}
         </p>
-        <Link to={`/product/${product.product_id}`}>
+        <Link to={`/products/${product.product_id}`}>
           <span className="cursor-pointer text-3xl xl:font-medium xl:text-lg">
             {product.name}
           </span>
@@ -87,4 +89,4 @@ function ProductListItem({
   );
 }
 
-export default React.memo(ProductListItem);
+export default React.memo(ProductGridItem);

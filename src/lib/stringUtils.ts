@@ -28,14 +28,14 @@ export function capitalizeWords(str: string): string {
  */
 export function capitalizeFirst(str: string): string {
   if (!str) return str;
-  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 export function formatDate(isoDateString: string) {
   const date = new Date(isoDateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }

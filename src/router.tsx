@@ -3,6 +3,7 @@ import ProductDetails from "./features/products/pages/ProductDetails";
 import Cart from "./features/cart/Cart";
 import Storefront from "./features/products/pages/Storefront";
 import Checkout from "./features/checkout/Checkout";
+import Products from "./features/products/pages/Products";
 
 export const router = createBrowserRouter(
   [
@@ -11,7 +12,11 @@ export const router = createBrowserRouter(
       element: <Storefront />,
     },
     {
-      path: "/product/:id",
+      path: "/products",
+      element: <Products />,
+    },
+    {
+      path: "/products/:id",
       element: <ProductDetails />,
     },
     {
