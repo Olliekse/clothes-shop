@@ -11,7 +11,8 @@ interface ButtonProps {
     | "explore"
     | "apply"
     | "filter"
-    | "sort";
+    | "sort"
+    | "continueShopping";
   disabled?: boolean;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
@@ -34,6 +35,8 @@ const classes: Record<ButtonProps["type"], string> = {
   filter:
     "disabled:bg-neutral-100 disabled:text-neutral-400 flex gap-[6px] justify-center items-center bg-white px-4 py-2.5 rounded border-[0.5px] border-solid shadow-md hover:bg-neutral-50 transition-all duration-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-100 rounded-sm p-1 font-medium text-sm text-neutral-900",
   sort: "disabled:bg-neutral-100 disabled:text-neutral-400 flex gap-[6px] justify-center items-center bg-white px-4 py-2.5 rounded border-[0.5px] border-solid shadow-md hover:bg-neutral-50 transition-all duration-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-100 rounded-sm p-1 font-medium text-sm text-neutral-900",
+  continueShopping:
+    "disabled:bg-neutral-100 disabled:text-neutral-400 flex justify-center items-center gap-1.5 bg-white px-4 py-2.5 rounded border-[0.5px] w-full border-solid shadow-md hover:bg-neutral-50 transition-all duration-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-100 rounded-sm p-1 self-end",
 };
 
 function Button({ type, children, disabled, onClick }: ButtonProps) {

@@ -1,24 +1,24 @@
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router";
 import { useCartStore } from "../../store/cartStore";
 import {
   capitalizeFirstLetter,
   formatPrice,
 } from "../../features/products/utils/productHelpers";
 import Button from "../Button";
+import { useNavigate } from "react-router";
 
 type OrderSummaryProps = {
-  variant: "cart" | "checkout";
+  variant: "cart" | "checkout" | "order-confirmation";
 };
 
 function OrderSummary({ variant }: OrderSummaryProps) {
   const [couponShow, setCouponShow] = useState(false);
   const { couponCode, setCouponCode } = useCartStore();
-
+  const navigate = useNavigate();
   const { items } = useCartStore();
 
-  const navigate = useNavigate();
-  const coupon = couponCode ? 5 : 0;
+  const couponField = useRef<HTMLInputElement>(null);
+
   const subtotal = items.reduce((sum, item) => {
     const itemPrice = item.price;
     const discount = item.discount || 0;
@@ -27,37 +27,42 @@ function OrderSummary({ variant }: OrderSummaryProps) {
     return sum + discountedPrice * item.quantity;
   }, 0);
 
-  const couponField = useRef<HTMLInputElement>(null);
-
+  const coupon = couponCode ? 5 : 0;
   const total = subtotal - coupon;
 
-  function handleClick() {
-    navigate("/checkout");
-  }
-
   return (
-    <div className="border border-solid border-neutral-200 rounded-lg py-[16px] px-[16px] mt-8 xl:mt-0  md:p-[32px] xl:flex xl:flex-col xl:justify-between">
+    <div
+      className={`${variant !== "order-confirmation" ? "border border-solid border-neutral-200 rounded-lg py-[16px] px-[16px]" : "md:px-0"} mt-8 lg:mt-0  md:p-[32px] lg:flex lg:flex-col lg:justify-between`}
+    >
       <div>
-        <h2
-          className={`font-semibold text-neutral-900 pb-[32px] ${variant === "checkout" ? "text-xl" : "text-2xl"}`}
-        >
-          Order Summary
-        </h2>
-        {variant === "checkout" && (
+        {variant !== "order-confirmation" && (
+          <h2
+            className={`font-semibold text-neutral-900 pb-[32px] ${variant === "checkout" ? "text-xl" : "text-2xl"}`}
+          >
+            Order Summary
+          </h2>
+        )}
+        {(variant === "checkout" || variant === "order-confirmation") && (
           <div className="flex flex-col">
             {items.map((item) => (
               <div
                 key={`${item.name} - ${item.size}`}
-                className="flex flex-row gap-6 border-b-[1px] border-dashed border-neutral-200 last-of-type:border-solid pb-8 pt-8 first-of-type:pt-0"
+                className={`${
+                  variant === "checkout"
+                    ? "flex flex-row gap-6 border-b-[1px] border-dashed border-neutral-200 last-of-type:border-solid pb-8 pt-8 first-of-type:pt-0"
+                    : "grid grid-cols-3 md:flex md:flex-row md:gap-6 border-b border-dashed pb-8 mb-8"
+                }`}
               >
                 <img
-                  className="object-cover w-[56px] h-[56px] rounded-lg md:w-[80px] md:h-[80px]"
+                  className={`object-cover flex-shrink-0 ${variant === "order-confirmation" ? "w-[80px] h-[80px]" : "w-[56px] h-[56px]"} rounded-lg md:w-[80px] md:h-[80px]`}
                   src={item.image}
                 />
-                <div className="xl:flex xl:justify-between w-[190px] md:w-full">
-                  <div className="flex flex-col gap-7 md:gap-0 md:flex-row md:justify-between">
+                <div className="lg:flex lg:justify-between w-[190px] md:w-full">
+                  <div
+                    className={`${variant === "order-confirmation" ? "grid grid-cols-[auto_auto] gap-5 lg:flex lg:justify-between lg:w-full" : ""} flex flex-col gap-7 md:gap-0 md:flex-row md:justify-between`}
+                  >
                     <div className="flex flex-col gap-2">
-                      <h3 className="font-medium text-neutral-900">
+                      <h3 className="font-medium text-neutral-900 text-xl">
                         {item.name}
                       </h3>
                       <div className="flex gap-1 font-medium text-neutral-600 md:col-start-2">
@@ -72,9 +77,7 @@ function OrderSummary({ variant }: OrderSummaryProps) {
 
                     <div className="text-right flex flex-col gap-2">
                       {item.discount > 0 && (
-                        <span
-                          className={`font-medium text-lg text-neutral-900 ${item.discount && item.discount > 0 ? "min-[375px]:pl-8 md:pl-28 xl:pl-52" : "pl-14"}`}
-                        >
+                        <span className="font-medium text-lg text-neutral-900">
                           $
                           {formatPrice(
                             item.price - (item.price / 100) * item.discount
@@ -82,7 +85,7 @@ function OrderSummary({ variant }: OrderSummaryProps) {
                         </span>
                       )}
                       <span
-                        className={`font-medium text-lg  ${item.discount && item.discount > 0 ? "text-xs line-through text-neutral-600 pl-1.5" : "text-neutral-900 min-[375px]:pl-[70px] md:pl-[172px] xl:pl-[260px]"}`}
+                        className={`font-medium text-lg  ${item.discount && item.discount > 0 && variant !== "order-confirmation" ? "text-xs line-through text-neutral-600" : ""} ${variant === "order-confirmation" ? " text-neutral-600 line-through" : "text-neutral-900"}`}
                       >
                         ${formatPrice(item.price)}
                       </span>
@@ -93,7 +96,9 @@ function OrderSummary({ variant }: OrderSummaryProps) {
             ))}
           </div>
         )}
-        <div className="flex justify-between pb-[18px] pt-8">
+        <div
+          className={`flex justify-between pb-[18px] ${variant === "order-confirmation" ? "pt-0" : "pt-8"}`}
+        >
           <p className="text-neutral-600">Subtotal</p>
           <span className="font-semibold text-lg text-neutral-900">
             ${formatPrice(subtotal)}
@@ -193,28 +198,22 @@ function OrderSummary({ variant }: OrderSummaryProps) {
       </div>
       <div className="">
         <div className="flex justify-between pt-[26px] md:py-[32px] border-t-[1px] border-dashed border-neutral-200 mt-[36px] md:mt-[32px]">
-          <p className="font-medium text-2xl text-neutral-900">Total</p>
-          <span className="font-semibold text-4xl text-right text-neutral-900">
+          <p
+            className={`${variant === "order-confirmation" ? "font-normal text-base" : "font-medium text-2xl"} text-neutral-900`}
+          >
+            Total
+          </p>
+          <span
+            className={`font-semibold  ${variant === "order-confirmation" ? "text-2xl" : "text-4xl"} text-right text-neutral-900`}
+          >
             ${formatPrice(total)}
           </span>
         </div>
-        <Button type="checkout" onClick={handleClick}>
-          {variant === "checkout" && (
-            <svg
-              width="13"
-              height="14"
-              viewBox="0 0 13 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.3611 5.6111H12.0556C12.4391 5.6111 12.75 5.922 12.75 6.30554V13.25C12.75 13.6335 12.4391 13.9444 12.0556 13.9444H0.944444C0.560917 13.9444 0.25 13.6335 0.25 13.25V6.30554C0.25 5.922 0.560917 5.6111 0.944444 5.6111H1.63889V4.91665C1.63889 2.23194 3.81528 0.055542 6.5 0.055542C9.18472 0.055542 11.3611 2.23194 11.3611 4.91665V5.6111ZM1.63889 6.99999V12.5555H11.3611V6.99999H1.63889ZM5.80556 8.38888H7.19444V11.1667H5.80556V8.38888ZM9.97222 5.6111V4.91665C9.97222 2.999 8.41764 1.44443 6.5 1.44443C4.58235 1.44443 3.02778 2.999 3.02778 4.91665V5.6111H9.97222Z"
-                fill="white"
-              />
-            </svg>
-          )}
-          {` ${variant === "checkout" ? "Confirm Order" : "Checkout"}`}
-        </Button>
+        {variant === "cart" && (
+          <Button type="checkout" onClick={() => navigate("/checkout")}>
+            Checkout
+          </Button>
+        )}
       </div>
     </div>
   );

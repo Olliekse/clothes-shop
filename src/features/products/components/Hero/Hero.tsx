@@ -1,7 +1,10 @@
 import Button from "../../../../components/Button";
 import heroImage from "../../../../assets/images/Hero image.jpg";
+import { useNavigate } from "react-router";
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <div className="px-3 bg-white md:px-4 xl:flex xl:flex-row xl:gap-8 xl:pt-[96px] xl:justify-center">
       <div className="flex flex-col gap-[16px] xl:w-[488px]">
@@ -12,7 +15,12 @@ function Hero() {
           This year, our new summer collection will be your haven from the
           world's harsh elements.
         </h3>
-        <Button onClick={() => {}} type="shopNow">
+        <Button
+          onClick={() => {
+            navigate("/products");
+          }}
+          type="shopNow"
+        >
           Shop now
         </Button>
       </div>

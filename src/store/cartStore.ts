@@ -32,6 +32,32 @@ type CartState = {
     size: string | number,
     quantity: number
   ) => void;
+  checkoutData: CheckoutData | null;
+  setCheckoutData: (data: CheckoutData) => void;
+  clearCheckoutData: () => void;
+};
+
+type CheckoutData = {
+  contact: {
+    email: string;
+  };
+  shipping: {
+    country: string;
+    firstName: string;
+    lastName: string;
+    address: string;
+    apartment?: string;
+    city: string;
+    state: string;
+    zip: string;
+  };
+  payment: {
+    cardNumber: string;
+    cardName: string;
+    expiry: string;
+    cvv: string;
+  };
+  deliveryMethod: string;
 };
 
 export const useCartStore = create<CartState>()(
@@ -87,16 +113,23 @@ export const useCartStore = create<CartState>()(
       clearCart: () => set({ items: [] }),
       initializeFromStorage: () => {
         const stored = localStorage.getItem("cart");
+        const storedCheckoutData = localStorage.getItem("checkoutData");
 
-        if (stored) {
-          const parsedItems = JSON.parse(stored);
-
+        if (stored || storedCheckoutData) {
           set((state) => {
-            if (state.items.length === 0) {
-              return { items: parsedItems };
+            const updates: Partial<CartState> = {};
+
+            if (stored && state.items.length === 0) {
+              const parsedItems = JSON.parse(stored);
+              updates.items = parsedItems;
             }
 
-            return state;
+            if (storedCheckoutData && !state.checkoutData) {
+              const parsedCheckoutData = JSON.parse(storedCheckoutData);
+              updates.checkoutData = parsedCheckoutData;
+            }
+
+            return Object.keys(updates).length > 0 ? updates : state;
           });
         }
       },
@@ -115,6 +148,16 @@ export const useCartStore = create<CartState>()(
               : item
           ),
         })),
+      checkoutData: null,
+
+      setCheckoutData: (data: CheckoutData) => {
+        set({ checkoutData: data });
+        localStorage.setItem("checkoutData", JSON.stringify(data));
+      },
+      clearCheckoutData: () => {
+        set({ checkoutData: null });
+        localStorage.removeItem("checkoutData");
+      },
     }),
 
     {

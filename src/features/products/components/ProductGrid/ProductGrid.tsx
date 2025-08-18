@@ -27,7 +27,7 @@ interface ProductGridProps {
   showViewAllButton?: boolean;
   maxProducts?: number;
   className?: string;
-  products: [];
+  products?: [];
   type?: string;
 }
 

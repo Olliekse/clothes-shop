@@ -3,7 +3,6 @@ import productReviews from "./product-reviews.json";
 import productInfo from "./product-info.json";
 import collections from "./collections.json";
 import users from "./users.json";
-import inventory from "./inventory.json";
 
 // Types
 export interface Product {

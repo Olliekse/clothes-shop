@@ -4,6 +4,7 @@ import Cart from "./features/cart/Cart";
 import Storefront from "./features/products/pages/Storefront";
 import Checkout from "./features/checkout/Checkout";
 import Products from "./features/products/pages/Products";
+import OrderConfirmation from "./features/checkout/OrderConfirmation";
 
 export const router = createBrowserRouter(
   [
@@ -24,6 +25,9 @@ export const router = createBrowserRouter(
       element: <Cart />,
     },
     { path: "/checkout", element: <Checkout /> },
+    {
+      path: "/order-confirmation", element:<OrderConfirmation />
+    }
   ],
   {
     basename: "/clothes-shop",
